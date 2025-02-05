@@ -40,11 +40,11 @@ export default function Home() {
               scrolled && "opacity-0 pointer-events-none",
             )}
           >
-            Nasnaga
+            Patronus Labs
           </Link>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-8 items-center text-sm">
-            <Link href="#work" className="hover:text-primary transition-colors">
+            {/* <Link href="#work" className="hover:text-primary transition-colors">
               Work
             </Link>
             <Link href="#services" className="hover:text-primary transition-colors">
@@ -52,9 +52,11 @@ export default function Home() {
             </Link>
             <Link href="#about" className="hover:text-primary transition-colors">
               About
-            </Link>
+            </Link> */}
             <Button variant="outline" className="rounded-full">
-              Contact
+              <Link href="https://notes.patronuslabs.org" target="_blank" className="hover:text-primary transition-colors">
+                Notes
+              </Link>
             </Button>
           </nav>
           {/* Mobile Navigation */}
@@ -89,25 +91,24 @@ export default function Home() {
         <div className="max-w-4xl">
           <h1 className="space-y-2 text-2xl sm:text-3xl font-normal leading-tight md:text-4xl">
             <div>
-              Oh, <span className="rounded-full border px-3 py-0.5">hi</span>
+              Oh, <span className="rounded-full border px-3 py-0.5">hello</span>
             </div>
             <div>
-              We <span className="rounded-full border px-3 py-0.5">research</span> build{" "}
-              <span className="rounded-full border px-3 py-0.5">strategy</span> and
+              We study <span className="rounded-full border px-3 py-0.5">people</span> and{" "}
+              <span className="rounded-full border px-3 py-0.5">their behaviours.</span>
             </div>
             <div>
-              create people oriented <span className="rounded-full border px-3 py-0.5">design</span> for small
+              To create a better understanding of decision making and <span className="rounded-full border px-3 py-0.5">influences</span> for everyone
             </div>
-            <div>and medium-sized businesses</div>
           </h1>
-          <Button className="mt-8 rounded-full" size="lg">
+          {/* <Button className="mt-8 rounded-full" size="lg">
             Contact us
-          </Button>
+          </Button> */}
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
+      {/* <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="rounded-2xl border p-8">
           <div className="grid grid-cols-3 divide-x">
             <div className="px-8 text-center">
@@ -124,10 +125,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Timeline Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      {/* <section className="max-w-7xl mx-auto px-6 py-24">
         <h2 className="mb-8 text-3xl font-medium">Our Process</h2>
         <div className="space-y-6">
           {timeline.map((item, index) => (
@@ -143,25 +144,27 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Current Projects */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-3xl font-medium">Current Projects</h2>
-          <Button variant="ghost" className="gap-2">
+          {/* <Button variant="ghost" className="gap-2">
             View all projects <ArrowRight className="h-4 w-4" />
-          </Button>
+          </Button> */}
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
-            <div key={index} className="group border rounded-lg p-6 hover:bg-muted/50 transition-colors">
+            <Link href="https://notes.patronuslabs.org" target="_blank">
+              <div key={index} className="group border rounded-lg p-6 hover:bg-muted/50 transition-colors">
               <div className="text-sm text-muted-foreground mb-2">{project.category}</div>
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-medium">{project.title}</h3>
                 <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -208,20 +211,20 @@ const timeline = [
 
 const projects = [
   {
-    title: "Brand Refresh",
-    category: "Branding",
+    title: "SCID",
+    category: "People and behaviours",
   },
-  {
-    title: "E-commerce Platform",
-    category: "Web Development",
-  },
-  {
-    title: "Mobile App Design",
-    category: "UI/UX",
-  },
-  {
-    title: "Marketing Campaign",
-    category: "Digital Marketing",
-  },
+  // {
+  //   title: "E-commerce Platform",
+  //   category: "Web Development",
+  // },
+  // {
+  //   title: "Mobile App Design",
+  //   category: "UI/UX",
+  // },
+  // {
+  //   title: "Marketing Campaign",
+  //   category: "Digital Marketing",
+  // },
 ]
 

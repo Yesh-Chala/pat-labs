@@ -3,6 +3,8 @@ import { ArrowRight, Circle, Menu } from "lucide-react"
 import { Button } from "./components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "./components/ui/sheet"
 import { cn } from "./lib/utils"
+import { GeistSans } from "geist/font/sans";
+
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -37,11 +39,11 @@ function App() {
               scrolled && "opacity-0 pointer-events-none",
             )}
           >
-            Nasnaga
+            Patronus Labs
           </a>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-8 items-center text-sm">
-            <a href="#work" className="hover:text-primary transition-colors">
+            {/* <a href="#work" className="hover:text-primary transition-colors">
               Work
             </a>
             <a href="#services" className="hover:text-primary transition-colors">
@@ -49,9 +51,9 @@ function App() {
             </a>
             <a href="#about" className="hover:text-primary transition-colors">
               About
-            </a>
+            </a> */}
             <Button variant="outline" className="rounded-full">
-              Contact
+              <a href="https://notes.patronuslabs.org">Notes</a>
             </Button>
           </nav>
           {/* Mobile Navigation */}
