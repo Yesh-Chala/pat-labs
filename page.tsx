@@ -155,17 +155,24 @@ export default function Home() {
           </Button> */}
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <Link href="https://notes.patronuslabs.org" target="_blank">
-              <div key={index} className="group border rounded-lg p-6 hover:bg-muted/50 transition-colors">
-              <div className="text-sm text-muted-foreground mb-2">{project.category}</div>
+            <Link href="https://intntion.com" target="_blank">
+              <div className="group border rounded-lg p-6 hover:bg-muted/50 transition-colors">
+              <div className="text-sm text-muted-foreground mb-2">Decision Making</div>
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-medium">{project.title}</h3>
+                <h3 className="text-xl font-medium">Intntion</h3>
                 <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
               </div>
             </div>
             </Link>
-          ))}
+            <Link href="https://notes.patronuslabs.org" target="_blank">
+            <div className="group border rounded-lg p-6 hover:bg-muted/50 transition-colors">
+            <div className="text-sm text-muted-foreground mb-2">People and Behaviours</div>
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-medium">SCID</h3>
+              <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
+            </div>
+          </div>
+          </Link>
         </div>
       </section>
 
@@ -211,13 +218,13 @@ const timeline = [
 
 const projects = [
   {
-    title: "SCID",
-    category: "People and behaviours",
+    title: "Intntion",
+    category: "Decision Making",
   },
-  // {
-  //   title: "E-commerce Platform",
-  //   category: "Web Development",
-  // },
+  {
+    title: "SCID",
+    category: "People and Behaviours",
+  },
   // {
   //   title: "Mobile App Design",
   //   category: "UI/UX",
