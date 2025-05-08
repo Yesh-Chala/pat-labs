@@ -47,8 +47,8 @@ const Index = () => {
       <Gap />
       <FoundersInSearch />
       <InvestmentApproach />
-      <About />
-      <Community />
+      {/* <About /> */}
+      {/* <Community /> */}
       <Footer />
     </main>
   );

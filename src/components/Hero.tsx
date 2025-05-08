@@ -11,8 +11,13 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section className={cn('relative min-h-screen flex items-center overflow-hidden', className)}>
       <div className="absolute inset-0 -z-10">
         <img 
-          src="/lovable-uploads/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png" 
+          src="/background.png" 
           alt="Orangery" 
+          className="w-full h-full object-cover"
+        />
+        <img 
+          src="/background" 
+          alt="Background" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -22,16 +27,16 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn delay={200}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white leading-tight mb-6">
-              Orangery Ventures
+              Patronus Labs
             </h1>
           </FadeIn>
           
           <FadeIn delay={300}>
             <p className="text-lg md:text-xl text-white/90 mb-4">
-              We believe founders with unfair advantages & domain expertise.
+            Understanding people shouldn’t be a luxury.
             </p>
             <p className="text-lg md:text-xl text-white/90 mb-8">
-              We back diverse teams and overlooked founders. First check, Baltic focus.
+            We turn real-time insight into better decisions—for India, and beyond.
             </p>
           </FadeIn>
         </div>

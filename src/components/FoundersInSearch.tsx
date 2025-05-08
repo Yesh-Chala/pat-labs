@@ -10,20 +10,20 @@ interface FoundersInSearchProps {
 const FoundersInSearch: React.FC<FoundersInSearchProps> = ({ className }) => {
   const founderTypes = [
     {
-      title: "Illegible Founders",
-      description: "Those who reject easy categorization, whether due to unconventional backgrounds, markets, or business models. We specialize in funding what others overlook."
+      title: "Ethical by Design",
+      description: "Every step—from data collection to insight delivery—is grounded in consent, transparency, and participant dignity."
     },
     {
-      title: "First-Time Founders with Significant Non-Tech Experience",
-      description: "Corporate leaders, operators, and business owners making the leap into startups, bringing unique domain expertise and execution ability."
+      title: "Bridging Research and Practice",
+      description: "We translate academic insight into actionable strategies for organizations, without losing depth or nuance."
     },
     {
-      title: "Academic Innovators & Researchers",
-      description: "Scientists and academics with deep technical knowledge and IP-driven innovations seeking to commercialize their research through entrepreneurship."
+      title: "Infrastructure for Relevance",
+      description: "We develop custom, context-sensitive systems to capture timely, meaningful behavioural data at scale."
     },
     {
-      title: "Gender-Diverse Teams",
-      description: "Backing women leaders and mixed-gender founding teams who bring fresh perspectives and collaborative approaches to building transformative companies."
+      title: "Focused on Inclusion",
+      description: "Our work prioritizes underrepresented voices, ensuring that insights reflect the full spectrum of lived realities."
     }
   ];
 
@@ -32,7 +32,7 @@ const FoundersInSearch: React.FC<FoundersInSearchProps> = ({ className }) => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto mb-16">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif mb-8 text-center">Founders we back</h2>
+            <h2 className="text-3xl md:text-4xl font-serif mb-8 text-center">Our Approach</h2>
           </FadeIn>
         </div>
         

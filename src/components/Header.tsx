@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           to="/" 
           className="text-xl font-serif font-medium tracking-tight transition-opacity hover:opacity-80"
         >
-          Orangery Ventures
+          Patronus Labs
         </NavLink>
         
         <div className="hidden md:flex items-center space-x-8">
@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               setIsMobileMenuOpen(false);
             }}
           >
-            Thesis
+            A Behavioural Science Research Institute
           </button>
           <button 
             className="text-left hover:text-orangery-500 transition-colors"
@@ -118,6 +118,19 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           >
             Investment
           </button>
+          <NavLink to="/projects" className="text-sm hover:text-orangery-500 transition-colors">Projects</NavLink>
+          <NavLink to="/research" className="text-sm hover:text-orangery-500 transition-colors">Research</NavLink>
+          <NavLink to="/about" className="text-sm hover:text-orangery-500 transition-colors">About</NavLink>
+          <NavLink 
+            to="/dashboard" 
+            className={({ isActive }) => cn(
+              "text-sm px-4 py-2 rounded-[4px] bg-black text-white hover:bg-black transition-colors inline-block",
+              isActive && "bg-black"
+            )}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Dashboard
+          </NavLink>
         </nav>
       </div>
     </header>
@@ -130,24 +143,42 @@ interface NavLinksProps {
 
 const NavLinks: React.FC<NavLinksProps> = ({ scrollToSection }) => (
   <>
-    <button 
-      className="text-sm font-medium hover:text-orangery-500 transition-colors"
-      onClick={() => scrollToSection('home')}
+    <NavLink 
+      to="/projects" 
+      className={({ isActive }) => cn(
+        "text-sm font-medium hover:text-orangery-500 transition-colors",
+        isActive && "text-orangery-500"
+      )}
     >
-      Home
-    </button>
-    <button 
-      className="text-sm font-medium hover:text-orangery-500 transition-colors"
-      onClick={() => scrollToSection('thesis')}
+      Projects
+    </NavLink>
+    <NavLink 
+      to="/research" 
+      className={({ isActive }) => cn(
+        "text-sm font-medium hover:text-orangery-500 transition-colors",
+        isActive && "text-orangery-500"
+      )}
     >
-      Thesis
-    </button>
-    <button 
-      className="text-sm font-medium hover:text-orangery-500 transition-colors"
-      onClick={() => scrollToSection('investment')}
+      Research
+    </NavLink>
+    <NavLink 
+      to="/about" 
+      className={({ isActive }) => cn(
+        "text-sm font-medium hover:text-orangery-500 transition-colors",
+        isActive && "text-orangery-500"
+      )}
     >
-      Investment
-    </button>
+      About
+    </NavLink>
+    <NavLink 
+      to="/dashboard" 
+      className={({ isActive }) => cn(
+        "text-sm font-medium px-4 py-2 rounded-[4px] bg-black text-white hover:bg-black transition-colors",
+        isActive && "bg-black"
+      )}
+    >
+      Dashboard
+    </NavLink>
   </>
 );
 

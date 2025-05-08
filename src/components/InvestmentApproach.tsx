@@ -25,16 +25,19 @@ const InvestmentApproach: React.FC<InvestmentApproachProps> = ({ className }) =>
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto mb-16">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif mb-8 text-center">Investment Approach</h2>
+            <h2 className="text-3xl md:text-4xl font-serif mb-8 text-center">Thesis</h2>
           </FadeIn>
           <FadeIn delay={100}>
-            <p className="text-lg text-center text-muted-foreground mb-12">
-              We invest sector-agnostically in pre-seed and seed stage in companies run by overlooked founders - such as gender-diverse teams, academic researchers, business owners, and corporate professionals transitioning into tech entrepreneurship. Our thesis is that tremendous untapped talent in these categories can yield high-impact startups if given early support. We believe in domain expertise and unfair advantages these founders bring.
+            <p className="text-lg text-left text-muted-foreground mb-12">
+            As India transitions from a digital economy to an intelligence-first society, the defining advantage will be a deep, real-time understanding of people—those we serve, sell to, and are accountable to. While code becomes cheaper and scale becomes faster, insight becomes the differentiator.
+            </p>
+            <p className="text-lg text-left text-muted-foreground mb-12">
+            At Patronus Labs, we aim to build an insight-rich ecosystem that helps early- and mid-stage companies ground their decisions in behavioural science. Our goal is to sharpen strategy, improve user experience, and prepare organizations for social, cultural, and technological shifts before they arrive.
             </p>
           </FadeIn>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        {/* <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {investmentTiers.map((tier, index) => (
             <FadeIn key={index} delay={150 + index * 50}>
               <Card className="border-0 shadow-sm h-full">
@@ -55,7 +58,7 @@ const InvestmentApproach: React.FC<InvestmentApproachProps> = ({ className }) =>
               </Card>
             </FadeIn>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

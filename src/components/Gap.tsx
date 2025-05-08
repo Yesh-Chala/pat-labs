@@ -49,16 +49,16 @@ const Gap: React.FC<GapProps> = ({ className }) => {
 
   const statistics = [
     {
-      title: "Stagnant Growth",
-      description: "Number of early stage rounds is not growing in the Baltics since 2021"
+      title: "Decisions are delayed.",
+      description: "Most choices rely on old data or intuition, not current reality."
     },
     {
-      title: "Limited Ecosystem",
-      description: "Total number of startups in Lithuania is stagnant for more than 5 years ~ 800"
+      title: "Voices are missed.",
+      description: "Entire populations are left out of the insight loop."
     },
     {
-      title: "Funding Inequality",
-      description: "90% of VC funding still goes to repeat founders and traditional tech backgrounds"
+      title: "Research is distant.",
+      description: "Behavioural science stays in papers, far from real impact."
     }
   ];
 
@@ -95,7 +95,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
             <div className="relative">
               <div className="w-full h-[500px] overflow-hidden">
                 <img 
-                  src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
+                  src="/background.png" 
                   alt="Beautiful orangery with palm trees and plants" 
                   className="w-full h-full object-cover"
                 />
@@ -107,7 +107,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
                 <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-md max-w-md w-full mx-4">
                   <h3 className="text-2xl font-serif mb-6 text-center">Subscribe for Updates</h3>
                   
-                  <div className="flex justify-center mb-6">
+                  {/* <div className="flex justify-center mb-6">
                     <Button 
                       variant="outline" 
                       className="bg-orangery-500/10 text-orangery-700 border-orangery-200 hover:bg-orangery-500/20 min-h-[3.5rem] min-w-[220px] md:min-w-[280px]"
@@ -119,7 +119,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
                         {messages[messageIndex]}
                       </span>
                     </Button>
-                  </div>
+                  </div> */}
                   
                   <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
                     <Input 
