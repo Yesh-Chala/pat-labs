@@ -11,6 +11,7 @@ import ResearchDivisionPage from "./pages/ResearchDivisionPage";
 import ResearchProjectPage from "./pages/ResearchProjectPage";
 import About from "./pages/About";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/research/:divisionId" element={<ResearchDivisionPage />} />
           <Route path="/research/:divisionId/:projectId" element={<ResearchProjectPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

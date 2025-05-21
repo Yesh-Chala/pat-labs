@@ -4,9 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 interface HeaderProps {
   className?: string;
+  isDashboard?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ className }) => {
+const Header: React.FC<HeaderProps> = ({ className, isDashboard }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -46,7 +47,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className={cn(
+        'container mx-auto px-4 md:px-6 flex items-center justify-between',
+        isDashboard && 'px-0 mx-5'
+      )}>
         <NavLink 
           to="/" 
           className="text-xl font-serif font-medium tracking-tight transition-opacity hover:opacity-80"
