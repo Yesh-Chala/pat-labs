@@ -19,7 +19,7 @@ export interface TimelineItem {
     "PatBot": {
       title: "PatBot",
       image: "/PatBot-Background.png",
-      category: "Technology",
+      category: "Technology and Research",
       date: "2025",
       summary: "An insight collection pipeline based on WhatsApp",
       description:
