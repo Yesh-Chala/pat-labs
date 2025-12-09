@@ -289,6 +289,9 @@ const ParticipantPool = () => {
                                 <p className="text-center text-xs text-slate-400 mt-4">
                                     By joining, you agree to our Terms of Service and Privacy Policy.
                                 </p>
+                                <p className="text-center text-xs text-slate-400 mt-2">
+                                    By submitting, you allow us to contact you about research opportunities and updates.
+                                </p>
                             </form>
                         </Form>
                     </CardContent>

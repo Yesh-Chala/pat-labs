@@ -13,6 +13,7 @@ import About from "./pages/About";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import ParticipantPool from "./pages/ParticipantPool";
+import ResearchPanel from "./pages/ResearchPanel";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/research/:divisionId" element={<ResearchDivisionPage />} />
           <Route path="/research/:divisionId/:projectId" element={<ResearchProjectPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/research-panel" element={<ResearchPanel />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/join" element={<ParticipantPool />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

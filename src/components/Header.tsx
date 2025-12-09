@@ -124,6 +124,7 @@ const Header: React.FC<HeaderProps> = ({ className, isDashboard }) => {
           </button>
           <NavLink to="/projects" className="text-sm hover:text-orangery-500 transition-colors">Projects</NavLink>
           <NavLink to="/research" className="text-sm hover:text-orangery-500 transition-colors">Research</NavLink>
+          <NavLink to="/research-panel" className="text-sm hover:text-orangery-500 transition-colors">Research Panel</NavLink>
           <NavLink to="/about" className="text-sm hover:text-orangery-500 transition-colors">About</NavLink>
           <NavLink 
             to="/dashboard" 
@@ -164,6 +165,15 @@ const NavLinks: React.FC<NavLinksProps> = ({ scrollToSection }) => (
       )}
     >
       Research
+    </NavLink>
+    <NavLink 
+      to="/research-panel" 
+      className={({ isActive }) => cn(
+        "text-sm font-medium hover:text-orangery-500 transition-colors",
+        isActive && "text-orangery-500"
+      )}
+    >
+      Research Panel
     </NavLink>
     <NavLink 
       to="/about" 
