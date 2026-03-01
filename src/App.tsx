@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
 import Research from "./pages/Research";
+import EmotionalImbalancesPage from "./pages/EmotionalImbalancesPage";
 import ResearchDivisionPage from "./pages/ResearchDivisionPage";
 import ResearchProjectPage from "./pages/ResearchProjectPage";
 import About from "./pages/About";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/research/emotional-imbalances-in-everyday-life" element={<EmotionalImbalancesPage />} />
           <Route path="/research/:divisionId" element={<ResearchDivisionPage />} />
           <Route path="/research/:divisionId/:projectId" element={<ResearchProjectPage />} />
           <Route path="/about" element={<About />} />

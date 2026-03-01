@@ -5,9 +5,10 @@ import { NavLink } from 'react-router-dom';
 interface HeaderProps {
   className?: string;
   isDashboard?: boolean;
+  hasAnnouncementBar?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ className, isDashboard }) => {
+const Header: React.FC<HeaderProps> = ({ className, isDashboard, hasAnnouncementBar }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -40,7 +41,8 @@ const Header: React.FC<HeaderProps> = ({ className, isDashboard }) => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed left-0 right-0 z-50 transition-all duration-300',
+        hasAnnouncementBar ? 'top-[3.5rem] md:top-[4rem]' : 'top-0',
         isScrolled 
           ? 'py-3 bg-white/90 backdrop-blur-md border-b border-gray-200/20 shadow-sm'
           : 'py-5 bg-transparent',

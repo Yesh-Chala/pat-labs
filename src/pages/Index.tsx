@@ -1,5 +1,5 @@
-
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Agenda from '@/components/Agenda';
@@ -39,7 +39,22 @@ const Index = () => {
 
   return (
     <main className="relative">
-      <Header />
+      {/* Announcement bar: fixed at very top, above navbar */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-stone-100/95 backdrop-blur-sm border-b border-stone-200/80">
+        <Link
+          to="/research/emotional-imbalances-in-everyday-life"
+          className="block w-full py-4 px-4 md:py-5 md:px-6 text-center text-sm text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 transition-colors font-sans"
+        >
+          <span className="font-medium">New:</span> Emotional Imbalances in Everyday Life — what we found about digital habits and everyday emotional life.{' '}
+          <span className="inline-flex items-center text-stone-600 hover:text-stone-900">
+            Read more
+            <svg className="ml-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </Link>
+      </div>
+      <Header hasAnnouncementBar />
       <Hero />
       <Agenda />
       <Methodology />
