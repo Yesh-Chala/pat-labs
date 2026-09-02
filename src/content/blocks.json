@@ -1,0 +1,139 @@
+[
+  {
+    "block": "announcement",
+    "heading": "",
+    "subheading": "",
+    "ctaLabel": "Read more",
+    "ctaLink": "",
+    "visible": true,
+    "order": 1,
+    "body": []
+  },
+  {
+    "block": "hero",
+    "heading": "Patronus Labs",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 2,
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "Patronus Labs is an independent research collective studying how digital systems, cultural evolution, and everyday behaviour interact in contemporary India." }] },
+      { "type": "paragraph", "spans": [{ "text": "Our work brings together behavioural science, qualitative research, and computational methods to examine how people think, communicate, and make decisions in environments increasingly shaped by AI and large-scale digital platforms." }] }
+    ]
+  },
+  {
+    "block": "agenda",
+    "heading": "Our agenda centres on slow, structural questions.",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 3,
+    "body": [
+      {
+        "type": "bulleted_list",
+        "items": [
+          { "spans": [{ "text": "How do digital habits form and become part of identity?" }], "children": [] },
+          { "spans": [{ "text": "How do people negotiate agency, trust, and vulnerability when interacting with algorithmic systems?" }], "children": [] },
+          { "spans": [{ "text": "What new social patterns emerge when everyday choices are mediated by automation?" }], "children": [] }
+        ]
+      },
+      { "type": "quote", "spans": [{ "text": "These questions guide our long-term research, shaping the way we build tools and conduct fieldwork." }] }
+    ]
+  },
+  {
+    "block": "methodology",
+    "heading": "We maintain an integrated approach to evidence.",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 4,
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "Our team runs interviews and ethnographic studies, designs experiments, analyses large datasets, and builds custom infrastructure to observe behaviour in real time." }] },
+      { "type": "paragraph", "spans": [{ "text": "This allows us to study transitions as they unfold rather than relying only on retrospective accounts or static datasets. The aim is to generate knowledge that captures both the surface behaviours and the underlying mechanisms driving them." }] },
+      {
+        "type": "bulleted_list",
+        "items": [
+          { "spans": [{ "text": "🔍 Ethnography" }], "children": [] },
+          { "spans": [{ "text": "📊 Data Analysis" }], "children": [] },
+          { "spans": [{ "text": "🧪 Experiments" }], "children": [] },
+          { "spans": [{ "text": "🛠️ Infrastructure" }], "children": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "block": "collective",
+    "heading": "Patronus Labs operates as a collective.",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 5,
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "We are not organised around clients, products, or commercial deliverables. Instead, our structure reflects the kind of work we do: open-ended inquiry, cross-disciplinary collaboration, and long-term thinking." }] },
+      { "type": "quote", "spans": [{ "text": "When we work with external partners, it is to extend research possibilities, not to produce simplified outputs." }] }
+    ]
+  },
+  {
+    "block": "featured",
+    "heading": "Recent work",
+    "subheading": "Selected projects, research, and writing from the collective.",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 6,
+    "body": []
+  },
+  {
+    "block": "projects_intro",
+    "heading": "Projects",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 20,
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "We design insight-driven systems that bring behavioural science closer to everyday decisions. From real-time data collection to strategic foresight, our work shapes products, policies, and futures. Each project reflects our commitment to ethics, inclusion, and context-first thinking." }] }
+    ]
+  },
+  {
+    "block": "research_intro",
+    "heading": "Research",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 21,
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "Our research explores the intersection of technology, culture, and human behavior. Through rigorous analysis and innovative methodologies, we uncover insights that shape the future of digital experiences." }] }
+    ]
+  },
+  {
+    "block": "blog_intro",
+    "heading": "Blog",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 22,
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "Notes, arguments, and work in progress from the collective. Shorter than a paper, longer than a post." }] }
+    ]
+  },
+  {
+    "block": "context",
+    "heading": "",
+    "subheading": "",
+    "ctaLabel": "",
+    "ctaLink": "",
+    "visible": true,
+    "order": 7,
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "India is entering an intelligence-first era, where social, cultural, and technological systems will continually reshape one another." }] },
+      { "type": "paragraph", "spans": [{ "text": "Understanding these shifts requires independence, rigour, and an ability to work across methods. Patronus Labs exists to build that understanding, to document what is changing, and to examine how these changes influence everyday life, institutional behaviour, and the future of collective decision-making." }] }
+    ]
+  }
+]

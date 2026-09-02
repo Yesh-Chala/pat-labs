@@ -1,23 +1,29 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
+import NotionBlocks from './content/NotionBlocks';
+import { usePageBlock } from '@/content';
 
 interface HeroProps {
   className?: string;
 }
 
+const FALLBACK_HEADING = 'Patronus Labs';
+
+const FALLBACK_BODY = [
+  'Patronus Labs is an independent research collective studying how digital systems, cultural evolution, and everyday behaviour interact in contemporary India.',
+  'Our work brings together behavioural science, qualitative research, and computational methods to examine how people think, communicate, and make decisions in environments increasingly shaped by AI and large-scale digital platforms.',
+];
+
 const Hero: React.FC<HeroProps> = ({ className }) => {
+  const block = usePageBlock('hero');
+
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden', className)}>
       <div className="absolute inset-0 -z-10">
         <img
           src="/background.png"
-          alt="Orangery"
-          className="w-full h-full object-cover"
-        />
-        <img
-          src="/background"
-          alt="Background"
+          alt=""
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -27,17 +33,23 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn delay={200}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white leading-tight mb-6">
-              Patronus Labs
+              {block?.heading || FALLBACK_HEADING}
             </h1>
           </FadeIn>
 
           <FadeIn delay={300}>
-            <p className="text-lg md:text-xl text-white/90 mb-4">
-              Patronus Labs is an independent research collective studying how digital systems, cultural evolution, and everyday behaviour interact in contemporary India.
-            </p>
-            <p className="text-lg md:text-xl text-white/90 mb-8">
-              Our work brings together behavioural science, qualitative research, and computational methods to examine how people think, communicate, and make decisions in environments increasingly shaped by AI and large-scale digital platforms.
-            </p>
+            {block?.body.length ? (
+              <NotionBlocks
+                blocks={block.body}
+                className="[&_p]:text-lg [&_p]:md:text-xl [&_p]:text-white/90"
+              />
+            ) : (
+              FALLBACK_BODY.map((paragraph, index) => (
+                <p key={index} className="text-lg md:text-xl text-white/90 mb-4 last:mb-0">
+                  {paragraph}
+                </p>
+              ))
+            )}
           </FadeIn>
         </div>
       </div>

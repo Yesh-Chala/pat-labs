@@ -50,6 +50,12 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Where does the content come from?
+
+Projects, Research, Blog posts, and the homepage copy are edited in Notion. The site
+fetches them at runtime via `/api/content`. Add the Notion env vars on Netlify (and in
+`.env` locally). Publish in Notion, refresh the site. See [NOTION_SETUP.md](./NOTION_SETUP.md).
+
 ## What technologies are used for this project?
 
 This project is built with .

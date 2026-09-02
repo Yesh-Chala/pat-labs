@@ -1,65 +1,71 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
+import AnnouncementBar from '@/components/AnnouncementBar';
 import Hero from '@/components/Hero';
 import Agenda from '@/components/Agenda';
 import Methodology from '@/components/Methodology';
 import Collective from '@/components/Collective';
+import Featured from '@/components/Featured';
 import Context from '@/components/Context';
 import Footer from '@/components/Footer';
+import { type PageBlockKey, useAnnouncementPost, useHomeSectionOrder, usePageBlock } from '@/content';
+
+const SECTIONS: Record<PageBlockKey, React.FC | undefined> = {
+  hero: Hero,
+  agenda: Agenda,
+  methodology: Methodology,
+  collective: Collective,
+  featured: Featured,
+  context: Context,
+  announcement: undefined,
+  projects_intro: undefined,
+  research_intro: undefined,
+  blog_intro: undefined,
+};
+
+const FALLBACK_ORDER: PageBlockKey[] = [
+  'hero',
+  'agenda',
+  'methodology',
+  'collective',
+  'featured',
+  'context',
+];
 
 const Index = () => {
   useEffect(() => {
-    // Smooth scroll behavior for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+    const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
 
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (!targetId) return;
+    const handleClick = (event: Event) => {
+      event.preventDefault();
+      const targetId = (event.currentTarget as HTMLAnchorElement).getAttribute('href')?.substring(1);
+      if (!targetId) return;
 
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80, // Account for header height
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function (e) {
-          // Cleanup
-        });
-      });
+      const target = document.getElementById(targetId);
+      if (target) {
+        // Offset by the fixed header height.
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      }
     };
+
+    anchors.forEach((anchor) => anchor.addEventListener('click', handleClick));
+    return () => anchors.forEach((anchor) => anchor.removeEventListener('click', handleClick));
   }, []);
+
+  const order = useHomeSectionOrder();
+  const announcement = usePageBlock('announcement');
+  const announcementPost = useAnnouncementPost();
+  const sections = order.length ? order : FALLBACK_ORDER;
+  const hasAnnouncementBar = Boolean(announcement && (announcementPost || announcement.ctaLink));
 
   return (
     <main className="relative">
-      {/* Announcement bar: fixed at very top, above navbar */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-stone-100/95 backdrop-blur-sm border-b border-stone-200/80">
-        <Link
-          to="/research/emotional-imbalances-in-everyday-life"
-          className="block w-full py-4 px-4 md:py-5 md:px-6 text-center text-sm text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 transition-colors font-sans"
-        >
-          <span className="font-medium">New:</span> Emotional Imbalances in Everyday Life — what we found about digital habits and everyday emotional life.{' '}
-          <span className="inline-flex items-center text-stone-600 hover:text-stone-900">
-            Read more
-            <svg className="ml-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </span>
-        </Link>
-      </div>
-      <Header hasAnnouncementBar />
-      <Hero />
-      <Agenda />
-      <Methodology />
-      <Collective />
-      <Context />
+      <AnnouncementBar />
+      <Header hasAnnouncementBar={hasAnnouncementBar} />
+      {sections.map((key) => {
+        const Section = SECTIONS[key];
+        return Section ? <Section key={key} /> : null;
+      })}
       <Footer />
     </main>
   );

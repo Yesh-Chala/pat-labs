@@ -1,0 +1,119 @@
+[
+  {
+    "id": "seed-patbot",
+    "slug": "patbot",
+    "type": "Project",
+    "title": "PatBot",
+    "summary": "An insight collection pipeline based on WhatsApp",
+    "description": "PatBot is a real-time data collection system built on top of WhatsApp, designed to reach participants where they already are. By leveraging India's most widely used communication platform, PatBot removes barriers to participation and enables scalable behavioural research and insights distribution.",
+    "imageUrl": "/PatBot-Background.png",
+    "imagePosition": "center",
+    "date": "2025",
+    "category": "Technology and Research",
+    "order": 1,
+    "ctaLabel": "",
+    "ctaLink": "",
+    "showOnHome": false,
+    "homeSlot": "",
+    "homeOrder": 0,
+    "timeline": [
+      { "when": "January 2025", "title": "Conception", "description": "Comprehensive analysis of existing systems and processes." },
+      { "when": "March 2025", "title": "Version 1 built", "description": "The first version of PatBot was built." },
+      { "when": "April 2025", "title": "Undergoing pilot testing", "description": "The first pilot testing of PatBot was conducted, insights were collected and the team is pivoting directions." }
+    ],
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "We chose WhatsApp not just for convenience, but because it represents everyday digital life in India. It’s where conversations happen, trust exists, and people respond." }] },
+      { "type": "paragraph", "spans": [{ "text": "PatBot lets us deliver surveys, questions, and prompts in a format that feels familiar and low-friction—creating higher response rates and more genuine engagement." }] },
+      { "type": "paragraph", "spans": [{ "text": "Our goal with PatBot is not just to collect data but to build an ongoing loop of insight generation, distribution, and action—rooted in ethical practices and full consent." }] },
+      { "type": "paragraph", "spans": [{ "text": "This project reflects our belief that the future of behavioural research lies in distribution: meeting people where they are, not forcing them to come to us." }] }
+    ]
+  },
+  {
+    "id": "seed-fama",
+    "slug": "fama",
+    "type": "Project",
+    "title": "Fama",
+    "summary": "An opinion intelligence engine built to extract structured public sentiment from the open internet.",
+    "description": "Fama is an opinion intelligence engine built to extract structured public sentiment from the open internet. It turns unfiltered conversations from platforms like Reddit, YouTube, and X into clear, decision-ready insight.",
+    "imageUrl": "/fama.png",
+    "imagePosition": "bottom",
+    "date": "2025",
+    "category": "Technology and Research",
+    "order": 2,
+    "ctaLabel": "Check it out",
+    "ctaLink": "https://fama.patronuslabs.org",
+    "showOnHome": false,
+    "homeSlot": "",
+    "homeOrder": 0,
+    "timeline": [
+      { "when": "March 2025", "title": "Project Kickoff", "description": "Development begins." },
+      { "when": "May 2025", "title": "Build Phase Complete", "description": "Initial build completed after two months of development." },
+      { "when": "June 2025", "title": "Testing Complete", "description": "One month of rigorous testing concluded." },
+      { "when": "August 2025", "title": "Revisions Complete", "description": "Two months of revisions and refinements finalized." },
+      { "when": "September 2025", "title": "Alpha Testing", "description": "Currently in alpha testing with research teams." }
+    ],
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "We built Fama around the idea that the most honest opinions are rarely in reports—they live in comment sections, threads, and long arguments between strangers. That raw layer of the internet is where real attitudes surface." }] },
+      { "type": "paragraph", "spans": [{ "text": "Fama automatically gathers these large-scale public conversations around a question or topic, cleans the noise, and distills them into patterns, themes, and sentiment shifts—without losing the texture of human language." }] },
+      { "type": "paragraph", "spans": [{ "text": "Our goal with Fama is not just summarization, but sense-making: helping researchers, founders, and policymakers see what people actually think, not just what they say in controlled settings." }] },
+      { "type": "paragraph", "spans": [{ "text": "This project reflects our belief that modern insight doesn’t come from scarcity of data, but from the ability to interpret abundance." }] }
+    ]
+  },
+  {
+    "id": "seed-alexis",
+    "slug": "alexis",
+    "type": "Project",
+    "title": "Alexis",
+    "summary": "A qualitative intelligence agent built to have real conversations at scale.",
+    "description": "Alexis is a qualitative intelligence agent built to have real conversations at scale. It is designed to ask, listen, follow up, and probe the way a trained researcher would—without turning people into form entries.",
+    "imageUrl": "/alexis.png",
+    "imagePosition": "center",
+    "date": "2025",
+    "category": "Technology and Research",
+    "order": 3,
+    "ctaLabel": "Check it out",
+    "ctaLink": "https://alexis.patronuslabs.org",
+    "showOnHome": false,
+    "homeSlot": "",
+    "homeOrder": 0,
+    "timeline": [
+      { "when": "June 2025", "title": "Project Started", "description": "Initial research and development began." },
+      { "when": "July 2025", "title": "Build Complete", "description": "First version of the agent was built." },
+      { "when": "September 2025", "title": "Testing Started", "description": "Initial testing phase commenced." },
+      { "when": "October 2025", "title": "Iterations Complete", "description": "Refinements based on initial testing were finalized." },
+      { "when": "November 2025", "title": "Phase 2 Testing & Pilots", "description": "Currently undergoing second phase of testing and pilots." }
+    ],
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "We built Alexis around the belief that the most important insights don’t come from checkboxes, but from stories, contradictions, hesitations, and the way people explain themselves." }] },
+      { "type": "paragraph", "spans": [{ "text": "Alexis conducts open-ended interviews through text and voice, adapts its questions in real time, and captures not just what people say, but how they say it. Every interaction becomes rich, analysable qualitative data." }] },
+      { "type": "paragraph", "spans": [{ "text": "Our goal with Alexis is not automation for speed, but depth at scale: making high-quality qualitative research possible beyond small sample sizes and slow fieldwork cycles." }] }
+    ]
+  },
+  {
+    "id": "seed-emotional-imbalances",
+    "slug": "emotional-imbalances-in-everyday-life",
+    "type": "Research",
+    "title": "Emotional Imbalances in Everyday Life",
+    "summary": "What we found about the emotional imbalances woven into our everyday digital lives — and what it might mean for how we all move forward.",
+    "description": "",
+    "imageUrl": "",
+    "imagePosition": "center",
+    "date": "2025",
+    "category": "",
+    "order": 1,
+    "ctaLabel": "",
+    "ctaLink": "",
+    "showOnHome": true,
+    "homeSlot": "Announcement Bar",
+    "homeOrder": 1,
+    "timeline": [],
+    "body": [
+      { "type": "paragraph", "spans": [{ "text": "We all have digital habits — the many ways we interact with our devices, whether that's a phone, a smartwatch, a computer, or a TV. But beyond the devices themselves, these habits shape how we connect with the people and world around us." }] },
+      { "type": "paragraph", "spans": [{ "text": "This got us curious. Where do our ideas of \"good\" and \"bad\" digital habits actually come from? And why do so many of us want to use our devices less, yet find ourselves unable to?" }] },
+      { "type": "paragraph", "spans": [{ "text": "We wanted to understand the awareness behind that pull — what drives someone to want to reduce their digital use, where that motivation originates, and what it really means for everyday emotional life." }] },
+      { "type": "paragraph", "spans": [{ "text": "So we ran a study. And now, we have data." }] },
+      { "type": "paragraph", "spans": [{ "text": "We're excited to share what we found about the emotional imbalances woven into our everyday digital lives — and what it might mean for how we all move forward." }] },
+      { "type": "paragraph", "spans": [{ "text": "More details coming soon." }] }
+    ]
+  }
+]
