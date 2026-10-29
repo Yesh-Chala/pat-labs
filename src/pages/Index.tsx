@@ -2,16 +2,15 @@ import React from 'react';
 import Header from '@/components/Header';
 
 const Index: React.FC = () => (
-  <main className="relative isolate min-h-screen overflow-hidden bg-[#758071] text-black">
+  <main className="relative isolate min-h-screen overflow-hidden bg-[#758071] text-[#24463F]">
     <div className="absolute inset-0 -z-10" aria-hidden="true">
       <img src="/background.png" alt="" className="h-full w-full object-cover" />
     </div>
 
     <Header />
 
-    <article className="relative mx-auto max-w-4xl px-6 pb-24 pt-36 sm:pt-40 md:px-10 md:pb-32 md:pt-44"
-      style={{ textShadow: "0 1px 2px rgba(255, 255, 255, 0.85), 0 0 10px rgba(255, 255, 255, 0.45)" }}>
-      <div className="space-y-7 text-lg font-semibold leading-relaxed text-black sm:text-xl sm:leading-[1.75]">
+    <article className="relative mx-auto mt-28 mb-16 max-w-4xl rounded-[20px] bg-[#F5F0DF]/90 px-7 py-9 backdrop-blur-[3px] sm:mt-32 sm:px-10 sm:py-12 md:mt-36 md:mb-24 md:px-12 md:py-14">
+      <div className="space-y-7 font-sans text-[17px] font-medium leading-[1.85] text-[#24463F] sm:text-[19px] sm:leading-[1.85]">
         <p>Patronus Labs is a frontier human lab. As the world’s largest companies race to make technology more capable, we study what that technology is doing to the people at the end of the line, so that progress can be steered toward a more human-centric world.</p>
 
         <p>We work under the principle that each major technological update sends out a ripple. Ripples meet other ripples, and while some fade out, others build into waves that change how people behave, feel, relate to each other and make meaning of their lives.</p>
@@ -22,7 +21,7 @@ const Index: React.FC = () => (
 
         <p>Some of the questions and areas we’re focussed on right now.</p>
 
-        <ul className="list-disc space-y-3 pl-6 marker:text-black/80">
+        <ul className="list-disc space-y-3 pl-6 marker:text-[#24463F]">
           <li>Why are people struggling to build better digital habits, despite trying?</li>
           <li>How does advanced work focussed models change relationship building and kinship at the office?</li>
           <li>How do people navigate the stigma associated with the reliance and relationship with AI?</li>
