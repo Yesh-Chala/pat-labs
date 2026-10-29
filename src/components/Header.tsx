@@ -16,24 +16,17 @@ const links = [
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
   return (
     <header
+      style={isHome ? { textShadow: '0 1px 8px rgba(0, 0, 0, 0.65)' } : undefined}
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-200',
         isHome
-          ? scrolled ? 'bg-[#101417]/95 text-white backdrop-blur-md' : 'bg-transparent text-white'
+          ? 'bg-transparent text-white'
           : 'border-b border-gray-200/70 bg-[#f8f8f5]/95 text-gray-950 backdrop-blur-md',
         className
       )}
