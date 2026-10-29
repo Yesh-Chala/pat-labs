@@ -22,17 +22,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
   return (
     <header
-      style={isHome ? { textShadow: '0 1px 8px rgba(0, 0, 0, 0.65)' } : undefined}
+      style={isHome ? { textShadow: '0 1px 3px rgba(255, 255, 255, 0.8), 0 0 9px rgba(255, 255, 255, 0.45)' } : undefined}
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-200',
         isHome
-          ? 'bg-transparent text-white'
+          ? 'bg-transparent text-black'
           : 'border-b border-gray-200/70 bg-[#f8f8f5]/95 text-gray-950 backdrop-blur-md',
         className
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-5 md:py-6">
-        <NavLink to="/" className="font-serif text-xl font-medium tracking-tight hover:opacity-80">
+        <NavLink to="/" className="font-serif text-xl font-semibold tracking-tight hover:opacity-80">
           Patronus Labs
         </NavLink>
 
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               key={to}
               to={to}
               className={({ isActive }) => cn(
-                'text-sm font-medium transition-opacity hover:opacity-70',
+                'text-sm font-semibold transition-opacity hover:opacity-70',
                 isActive ? 'underline underline-offset-8' : ''
               )}
             >
