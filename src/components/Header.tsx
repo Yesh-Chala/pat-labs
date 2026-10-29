@@ -1,189 +1,92 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { NavLink } from 'react-router-dom';
 
 interface HeaderProps {
   className?: string;
   isDashboard?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ className, isDashboard }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const links = [
+  { to: '/blog', label: 'Blog' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/research', label: 'Research' },
+];
+
+const Header: React.FC<HeaderProps> = ({ className }) => {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    if (id === 'home') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        window.scrollTo({
-          top: element.offsetTop - 80, // Account for header height
-          behavior: 'smooth'
-        });
-      }
-    }
-  };
+  useEffect(() => setMenuOpen(false), [pathname]);
 
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled 
-          ? 'py-3 bg-white/90 backdrop-blur-md border-b border-gray-200/20 shadow-sm'
-          : 'py-5 bg-transparent',
+        'fixed inset-x-0 top-0 z-50 transition-colors duration-200',
+        isHome
+          ? scrolled ? 'bg-[#101417]/95 text-white backdrop-blur-md' : 'bg-transparent text-white'
+          : 'border-b border-gray-200/70 bg-[#f8f8f5]/95 text-gray-950 backdrop-blur-md',
         className
       )}
     >
-      <div className={cn(
-        'container mx-auto px-4 md:px-6 flex items-center justify-between',
-        isDashboard && 'px-0 mx-5'
-      )}>
-        <NavLink 
-          to="/" 
-          className="text-xl font-serif font-medium tracking-tight transition-opacity hover:opacity-80"
-        >
+      <div className="container mx-auto flex items-center justify-between px-6 py-5 md:py-6">
+        <NavLink to="/" className="font-serif text-xl font-medium tracking-tight hover:opacity-80">
           Patronus Labs
         </NavLink>
-        
-        <div className="hidden md:flex items-center space-x-8">
-          <NavLinks scrollToSection={scrollToSection} />
-        </div>
-        
-        <button 
-          className="md:hidden flex items-center"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Main navigation">
+          {links.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) => cn(
+                'text-sm font-medium transition-opacity hover:opacity-70',
+                isActive ? 'underline underline-offset-8' : ''
+              )}
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <button
+          type="button"
+          className="flex h-10 w-10 items-center justify-center md:hidden"
+          onClick={() => setMenuOpen(open => !open)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
-          <span className={cn(
-            "block w-6 transition-all duration-300",
-            isMobileMenuOpen ? "opacity-0" : "opacity-100"
-          )}>
-            <span className="block w-6 h-0.5 bg-foreground mb-1.5" />
-            <span className="block w-6 h-0.5 bg-foreground mb-1.5" />
-            <span className="block w-4 h-0.5 bg-foreground" />
+          <span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span>
+          <span className="flex w-6 flex-col gap-1.5">
+            <span className={cn('block h-0.5 w-6 bg-current transition-transform', menuOpen && 'translate-y-1 rotate-45')} />
+            <span className={cn('block h-0.5 w-6 bg-current transition-transform', menuOpen && '-translate-y-1 -rotate-45')} />
           </span>
         </button>
       </div>
-      
-      <div 
-        className={cn(
-          "fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out transform md:hidden",
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}
-      >
-        <button 
-          className="absolute top-5 right-5 p-2"
-          onClick={() => setIsMobileMenuOpen(false)}
-          aria-label="Close menu"
-        >
-          <span className="block w-6 h-0.5 bg-foreground transform rotate-45 translate-y-0.5" />
-          <span className="block w-6 h-0.5 bg-foreground transform -rotate-45" />
-        </button>
-        
-        <nav className="flex flex-col space-y-6 text-lg">
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => cn(
-              "hover:text-orangery-500 transition-colors",
-              isActive && "text-orangery-500 font-semibold"
-            )}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Home
-          </NavLink>
-          <button 
-            className="text-left hover:text-orangery-500 transition-colors"
-            onClick={() => {
-              scrollToSection('thesis');
-              setIsMobileMenuOpen(false);
-            }}
-          >
-            A Behavioural Science Research Institute
-          </button>
-          <button 
-            className="text-left hover:text-orangery-500 transition-colors"
-            onClick={() => {
-              scrollToSection('investment');
-              setIsMobileMenuOpen(false);
-            }}
-          >
-            Investment
-          </button>
-          <NavLink to="/projects" className="text-sm hover:text-orangery-500 transition-colors">Projects</NavLink>
-          <NavLink to="/research" className="text-sm hover:text-orangery-500 transition-colors">Research</NavLink>
-          <NavLink to="/about" className="text-sm hover:text-orangery-500 transition-colors">About</NavLink>
-          <NavLink 
-            to="/dashboard" 
-            className={({ isActive }) => cn(
-              "text-sm px-4 py-2 rounded-[4px] bg-black text-white hover:bg-black transition-colors inline-block",
-              isActive && "bg-black"
-            )}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Dashboard
-          </NavLink>
+
+      {menuOpen && (
+        <nav id="mobile-navigation" aria-label="Mobile navigation" className="border-t border-gray-200 bg-[#f8f8f5] px-6 py-6 text-gray-950 md:hidden">
+          <div className="flex flex-col gap-6">
+            {links.map(({ to, label }) => (
+              <NavLink key={to} to={to} onClick={() => setMenuOpen(false)} className="text-lg font-medium">
+                {label}
+              </NavLink>
+            ))}
+          </div>
         </nav>
-      </div>
+      )}
     </header>
   );
 };
-
-interface NavLinksProps {
-  scrollToSection: (id: string) => void;
-}
-
-const NavLinks: React.FC<NavLinksProps> = ({ scrollToSection }) => (
-  <>
-    <NavLink 
-      to="/projects" 
-      className={({ isActive }) => cn(
-        "text-sm font-medium hover:text-orangery-500 transition-colors",
-        isActive && "text-orangery-500"
-      )}
-    >
-      Projects
-    </NavLink>
-    <NavLink 
-      to="/research" 
-      className={({ isActive }) => cn(
-        "text-sm font-medium hover:text-orangery-500 transition-colors",
-        isActive && "text-orangery-500"
-      )}
-    >
-      Research
-    </NavLink>
-    <NavLink 
-      to="/about" 
-      className={({ isActive }) => cn(
-        "text-sm font-medium hover:text-orangery-500 transition-colors",
-        isActive && "text-orangery-500"
-      )}
-    >
-      About
-    </NavLink>
-    <NavLink 
-      to="/dashboard" 
-      className={({ isActive }) => cn(
-        "text-sm font-medium px-4 py-2 rounded-[4px] bg-black text-white hover:bg-black transition-colors",
-        isActive && "bg-black"
-      )}
-    >
-      Dashboard
-    </NavLink>
-  </>
-);
 
 export default Header;
