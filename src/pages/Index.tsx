@@ -12,7 +12,7 @@ const Index: React.FC = () => {
     const form = event.currentTarget;
     const fields = new FormData(form);
 
-    // Netlify Forms registers this form from the static HTML during deployment.
+    // Netlify detects the matching form in public/__forms.html at build time.
     const encoded = new URLSearchParams();
     for (const [key, value] of fields.entries()) {
       if (typeof value === 'string') encoded.append(key, value);
@@ -20,15 +20,16 @@ const Index: React.FC = () => {
 
     setFormStatus('sending');
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encoded.toString(),
       });
-      if (!response.ok) throw new Error('Contact submission failed');
+      if (!response.ok) throw new Error(`Contact form returned HTTP ${response.status}`);
       setFormStatus('success');
       form.reset();
-    } catch {
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
       setFormStatus('error');
     }
   };
@@ -81,7 +82,7 @@ const Index: React.FC = () => {
               </button>
             </div>
           ) : (
-            <form name="patronus-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="max-w-2xl space-y-9">
+            <form name="patronus-contact" method="POST" action="/__forms.html" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="max-w-2xl space-y-9">
               <input type="hidden" name="form-name" value="patronus-contact" />
               <p className="hidden" aria-hidden="true"><label>Do not fill this in: <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
               <div className="grid gap-9 sm:grid-cols-2">

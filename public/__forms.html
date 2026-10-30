@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Patronus Labs contact form</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <!-- Netlify scans this static file during deployment to register patronus-contact. -->
+    <form name="patronus-contact" method="POST" action="/__forms.html" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="patronus-contact" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

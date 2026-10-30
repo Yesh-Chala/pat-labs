@@ -15,14 +15,6 @@
 
   <body>
     <div id="root"></div>
-    <!-- Netlify detects contact forms in built HTML, not React-rendered markup. -->
-    <form name="patronus-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="patronus-contact" />
-      <input type="text" name="bot-field" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
