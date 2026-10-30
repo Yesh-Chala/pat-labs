@@ -66,37 +66,37 @@ const Index: React.FC = () => {
         </div>
       </article>
 
-      <section id="reach-out" className="mx-auto max-w-4xl scroll-mt-24 px-7 pb-24 sm:px-10 md:px-12">
-        <div className="rounded-2xl bg-[#F5F0DF]/95 px-7 py-9 text-[#24463F] sm:px-10 sm:py-11">
-          <h2 className="mb-3 font-serif text-3xl font-medium">Reach out</h2>
-          <p className="mb-7 max-w-xl text-base leading-relaxed">
+      <section id="reach-out" className="mx-auto max-w-4xl scroll-mt-24 px-7 pb-28 sm:px-10 md:px-12">
+        <div className="border-t border-white/35 pt-12 sm:pt-14">
+          <h2 className="mb-3 font-serif text-3xl font-normal tracking-tight text-white">Reach out</h2>
+          <p className="mb-10 max-w-xl text-base leading-relaxed text-white/85">
             Interested in our research or working together? Send us a message.
           </p>
 
           {formStatus === 'success' ? (
-            <div role="status" className="rounded-lg border border-[#24463F]/25 px-5 py-4">
+            <div role="status" className="text-base leading-relaxed text-white">
               Thank you. Your message has been submitted.
-              <button type="button" onClick={() => setFormStatus('idle')} className="ml-2 underline underline-offset-4">
+              <button type="button" onClick={() => setFormStatus('idle')} className="ml-3 underline underline-offset-4 hover:text-white/75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
                 Send another
               </button>
             </div>
           ) : (
-            <form name="patronus-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-5">
+            <form name="patronus-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="max-w-2xl space-y-9">
               <input type="hidden" name="form-name" value="patronus-contact" />
               <p className="hidden" aria-hidden="true"><label>Do not fill this in: <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="block text-sm font-medium">Name
-                  <input name="name" required autoComplete="name" maxLength={120} className="mt-2 block w-full rounded-md border border-[#24463F]/25 bg-white/85 px-4 py-3 text-base text-[#24463F] outline-offset-2 focus:outline-[#24463F]" />
+              <div className="grid gap-9 sm:grid-cols-2">
+                <label className="block text-xs font-medium uppercase tracking-[0.14em] text-white/80">Name
+                  <input name="name" required autoComplete="name" maxLength={120} className="mt-2 block w-full rounded-none border-0 border-b border-white/55 bg-transparent px-0 py-3 font-sans text-base font-normal normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/50 focus:border-white focus-visible:border-white focus-visible:ring-0" />
                 </label>
-                <label className="block text-sm font-medium">Email
-                  <input name="email" type="email" required autoComplete="email" maxLength={254} className="mt-2 block w-full rounded-md border border-[#24463F]/25 bg-white/85 px-4 py-3 text-base text-[#24463F] outline-offset-2 focus:outline-[#24463F]" />
+                <label className="block text-xs font-medium uppercase tracking-[0.14em] text-white/80">Email
+                  <input name="email" type="email" required autoComplete="email" maxLength={254} className="mt-2 block w-full rounded-none border-0 border-b border-white/55 bg-transparent px-0 py-3 font-sans text-base font-normal normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/50 focus:border-white focus-visible:border-white focus-visible:ring-0" />
                 </label>
               </div>
-              <label className="block text-sm font-medium">Message
-                <textarea name="message" required rows={5} maxLength={5000} className="mt-2 block w-full resize-y rounded-md border border-[#24463F]/25 bg-white/85 px-4 py-3 text-base text-[#24463F] outline-offset-2 focus:outline-[#24463F]" />
+              <label className="block text-xs font-medium uppercase tracking-[0.14em] text-white/80">Message
+                <textarea name="message" required rows={4} maxLength={5000} className="mt-2 block w-full resize-y rounded-none border-0 border-b border-white/55 bg-transparent px-0 py-3 font-sans text-base font-normal normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/50 focus:border-white focus-visible:border-white focus-visible:ring-0" />
               </label>
-              {formStatus === 'error' && <p role="alert" className="text-sm text-red-800">The message could not be sent. Please try again.</p>}
-              <button type="submit" disabled={formStatus === 'sending'} className="rounded-md bg-[#24463F] px-7 py-3 font-medium text-white transition-colors hover:bg-[#16352E] disabled:cursor-wait disabled:opacity-60">
+              {formStatus === 'error' && <p role="alert" className="text-sm text-white">The message could not be sent. Please try again.</p>}
+              <button type="submit" disabled={formStatus === 'sending'} className="border border-white/75 bg-transparent px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white disabled:cursor-wait disabled:opacity-60">
                 {formStatus === 'sending' ? 'Sending…' : 'Send message'}
               </button>
             </form>
