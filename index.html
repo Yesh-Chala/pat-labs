@@ -1609,8 +1609,17 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
     if(location.hash!=="#"+name){ try{ history.pushState(null,"","#"+name);}catch(_){ location.hash=name; } }
     show(name,jump);
   });
-  window.addEventListener("hashchange",function(){ show(location.hash.slice(1)); });
-  window.addEventListener("popstate",function(){ show(location.hash.slice(1)); });
+  // A hash that names a section rather than a view opens the view that holds it.
+  function route(){
+    var h=location.hash.slice(1);
+    if(h && views.indexOf(h)<0){
+      var el=document.getElementById(h), host=el && el.closest(".view");
+      if(host){ show(host.dataset.view,h); return; }
+    }
+    show(h);
+  }
+  window.addEventListener("hashchange",route);
+  window.addEventListener("popstate",route);
   navToggle.addEventListener("click",function(){
     var open=nav.classList.toggle("open"); navToggle.setAttribute("aria-expanded",open?"true":"false");
   });
@@ -1627,14 +1636,7 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
       try{ history.replaceState(null,"","/"+(v==="home"?"":"#"+v)); }catch(_){}
     }
   })();
-  (function(){
-    var h=location.hash.slice(1);
-    if(h && views.indexOf(h)<0){
-      var el=document.getElementById(h), host=el && el.closest(".view");
-      if(host){ show(host.dataset.view,h); return; }
-    }
-    show(h);
-  })();
+  route();
 
   // ---------- manifesto spotlight ----------
   var reduce=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
