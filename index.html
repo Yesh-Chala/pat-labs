@@ -224,6 +224,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .field textarea{min-height:130px;resize:vertical}
 .submit{justify-self:start;font:inherit;font-size:15px;font-weight:500;background:var(--ink);color:var(--paper);border:0;border-radius:8px;padding:11px 20px;cursor:pointer}
 .submit:hover{background:var(--pine)}
+.form-link{display:inline-block;text-decoration:none}
 .form-note{font-size:14px;color:var(--ink-2)}
 .form-msg{font-size:15px;color:var(--pine);font-weight:500}
 
@@ -387,7 +388,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .mapd:last-of-type{border-bottom:1px solid var(--rule)}
 .mapd summary{cursor:pointer;font-weight:600;color:var(--ink)}
 .mapd[open] summary{margin-bottom:12px}
-.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 </style>
 </head>
 <body>
@@ -407,7 +407,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <a href="#research" data-nav="research">Research</a>
       <a href="#tools" data-nav="tools">Tools &amp; interventions</a>
       <a href="#collective" data-nav="collective">Research collective</a>
-      <a href="#collective" data-nav="collective" data-jump="reach-out" class="btn">Reach out</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeACcv8aoG6FO_6Xanj3iv2z2pV9_UaHssQbUzHhccjfllt9g/viewform" target="_blank" rel="noopener" class="btn">Reach out</a>
     </nav>
   </div>
 </header>
@@ -433,7 +433,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <p>We work under the principle that each major technological update sends out a ripple. Ripples meet other ripples, and while some fade out, others build into waves that change how people behave, feel, relate to each other and make meaning of their lives.</p>
         <p>Frontier technology labs bring rigorous research to bear on the technology itself. We bring that same rigor to the human counterpart, studying how advanced technologies are reflected on, used and lived with, and what that means for the kind of world we are building.</p>
         <p>We also build the tools to do this work. Along with our studies, we develop testbeds, metrics and evaluation tools that help us understand human behavior around technology and measure it better.</p>
-        <p>We think these changes deserve to be studied, understood and talked about. That is why Patronus Labs exists.</p>
+        <p>We think these changes deserve to be studied, understood and talked about.</p>
       </div>
 
       <figure class="figure" style="margin:8px 0 0">
@@ -463,7 +463,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
           <text class="fig-label" x="600" y="200">How they relate</text>
           <text class="fig-label" x="600" y="218">How they make meaning</text>
         </svg>
-        <figcaption class="figcap">The principle we work under: each major technological update sends out a ripple, and some ripples build into waves.</figcaption>
       </figure>
     </article>
 
@@ -484,13 +483,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <a class="door" href="#research" data-nav="research">
           <span class="mono">Research</span>
           <h3>Studies of technology in everyday life</h3>
-          <p>Our studies, starting with how people live with their phones and why better digital habits are so hard to keep.</p>
+          <p>We look into problems at the intersection of technology and society, with a focus on wellbeing, human-centred development and agency.</p>
           <span class="go">Explore research →</span>
         </a>
         <a class="door" href="#tools" data-nav="tools">
           <span class="mono">Tools &amp; interventions</span>
           <h3>Testbeds, metrics and evaluation tools</h3>
-          <p>PatBot, Alexis and Build Your Phone Day: the instruments we build to reach people and measure behavior better.</p>
+          <p>A look at the tools and testbeds we are currently building or validating.</p>
           <span class="go">See the tools →</span>
         </a>
       </div>
@@ -1537,26 +1536,9 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
     <section class="section" id="reach-out" aria-labelledby="reach">
       <p class="mono eyebrow">Reach out</p>
       <h2 class="h2" id="reach">Tell us what you’re curious about</h2>
-      <p class="lede">If you are interested in our research, want to join the collective, or just want to talk, send us a note.</p>
-      <form class="form" id="contact-form" name="patronus-contact" method="POST" action="/__forms.html" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-        <input type="hidden" name="form-name" value="patronus-contact">
-        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <div class="row2">
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        </div>
-        <div class="field"><label for="f-interest">I’m interested in</label>
-          <select id="f-interest" name="interest">
-            <option>Joining the research collective</option>
-            <option>Your research</option>
-            <option>Your tools</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
-        <button class="submit" type="submit">Send message</button>
-        <p class="form-msg" id="form-msg" role="status" hidden></p>
-      </form>
+      <p class="lede">If you are interested in our research, want to join the collective, or just want to talk, fill in this short form and we will write back.</p>
+      <p><a class="submit form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeACcv8aoG6FO_6Xanj3iv2z2pV9_UaHssQbUzHhccjfllt9g/viewform" target="_blank" rel="noopener">Open the form</a></p>
+      <p class="form-note">The form opens in Google Forms in a new tab. It asks for your name, your email, what you are interested in and a short message.</p>
     </section>
   </div>
 </section>
@@ -1568,7 +1550,7 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
       <div><span class="mono">Read</span><a href="#research" data-nav="research">Research</a></div>
       <div><span class="mono">Use</span><a href="#tools" data-nav="tools">Tools &amp; interventions</a></div>
       <div><span class="mono">Join</span><a href="#collective" data-nav="collective">Research collective</a></div>
-      <div><span class="mono">Write to us</span><a href="#collective" data-nav="collective" data-jump="reach-out">Reach out</a></div>
+      <div><span class="mono">Write to us</span><a href="https://docs.google.com/forms/d/e/1FAIpQLSeACcv8aoG6FO_6Xanj3iv2z2pV9_UaHssQbUzHhccjfllt9g/viewform" target="_blank" rel="noopener">Reach out</a></div>
     </div>
     <div class="foot-base"><span>© 2026 Patronus Labs</span><span>A frontier human lab</span></div>
   </div>
@@ -1667,25 +1649,6 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
     secs.forEach(function(sec){ so.observe(sec); });
   }
 
-  // ---------- form ----------
-  var form=document.getElementById("contact-form"), msg=document.getElementById("form-msg");
-  var sending=false;
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(sending) return;
-    var name=document.getElementById("f-name").value.trim(), email=document.getElementById("f-email").value.trim();
-    msg.hidden=false;
-    if(!name || !email || email.indexOf("@")<1){ msg.textContent="Add your name and a valid email so we can write back."; return; }
-    var body=new URLSearchParams();
-    new FormData(form).forEach(function(v,k){ if(typeof v==="string") body.append(k,v); });
-    var btn=form.querySelector(".submit"); sending=true; btn.disabled=true; msg.textContent="Sending\u2026";
-    fetch("/__forms.html",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()})
-      .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status);
-        msg.textContent="Thanks, "+name+". Your note reached us, and we will write back to "+email+".";
-        form.reset(); })
-      .catch(function(){ msg.textContent="Something went wrong and your note was not sent. Please try again in a moment."; })
-      .then(function(){ sending=false; btn.disabled=false; });
-  });
 })();
 </script>
 </body>
