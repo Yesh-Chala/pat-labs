@@ -288,6 +288,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .quote figcaption{color:var(--ink-2);font-size:11px}
 .caveat{border:1px dashed var(--ember);border-radius:12px;padding:14px 16px;font-size:15.5px;line-height:1.55;max-width:64ch}
 .caveat strong{color:var(--ember-soft);font-weight:600}
+.todo{font-family:var(--mono);font-size:.82em;letter-spacing:.02em;color:var(--ember);border-bottom:1px dashed var(--ember);white-space:normal}
 .fig-title{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--ink-2)}
 .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
@@ -1440,6 +1441,125 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
   </div>
 </section>
 
+<!-- ======================= PATBOT PILOT REPORT ======================= -->
+<section class="view" id="view-patbot" data-view="patbot" aria-label="PatBot pilot report" hidden>
+  <div class="r-wrap">
+   <div class="r-main">
+    <header class="r-head">
+      <a class="back" href="#tools" data-nav="tools">← All tools</a>
+      <p class="r-meta mono"><span>Pilot report</span><span>Alpha test</span><span>In testing</span><span class="draft">Draft</span></p>
+      <h1>PatBot</h1>
+      <p class="r-sub">Short, in-the-moment studies delivered through the messaging apps people already use, and an early test of the approach in India</p>
+      <p class="lede">PatBot takes surveys and brief check-ins to people inside the chat apps they open every day, so that a study can ask about a moment while it is still happening rather than hours later. This report sets out why we built it, how it works from a participant’s side, what a small alpha test showed, and where the project stands now. PatBot has not been launched, and we describe it here as a tool that is still being tested.</p>
+      <div class="r-btns">
+        <a class="pri" href="#patbot" data-nav="patbot" data-jump="b-alpha">Alpha test</a>
+        <a href="#patbot" data-nav="patbot" data-jump="b-status">Current status</a>
+        <a href="#collective" data-nav="collective" data-jump="reach-out">Work with us</a>
+      </div>
+    </header>
+
+    <section class="section" aria-label="Summary">
+      <div class="tldr">
+        <p class="mono eyebrow">Summary</p>
+        <ul>
+          <li>People recall their phone use poorly once a few hours have passed, and the use they regret most is often the use they notice only afterwards. Asking about a moment while it is still recent gives a closer account than asking about the whole day at its end.</li>
+          <li>Researchers working in India and the wider Global South have few affordable ways to reach participants, because the panels most studies rely on recruit mainly in high-income countries. PatBot is our attempt to reach people where they already spend their day, in <strong>everyday messaging apps</strong>, with no new platform to install.</li>
+          <li>An alpha test with <span class="todo">[number of participants]</span> people over <span class="todo">[length of the test]</span> returned a response rate of <strong>70 to 80%</strong> and an average response time of <strong>15 to 20 minutes</strong> <span class="todo">[figures to confirm]</span>, which suggests that short check-ins in a chat can reach people close to the moment they describe.</li>
+          <li>PatBot is <strong>paused</strong> for now. Restarting it depends on funding to pay participants for their time and on access to participant communities who can receive studies, and we would welcome funders and collaborators who can help with either.</li>
+        </ul>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="n">70–80%</span><span class="l">response rate in the alpha test <span class="todo">[to confirm]</span></span></div>
+        <div class="stat"><span class="n">15–20 min</span><span class="l">average time to respond <span class="todo">[to confirm]</span></span></div>
+        <div class="stat"><span class="n"><span class="todo">[n]</span></span><span class="l">participants in the alpha test</span></div>
+        <div class="stat"><span class="n">Paused</span><span class="l">pending participant payments and access</span></div>
+      </div>
+      <div class="caveat"><strong>Status of this tool.</strong> PatBot is in testing and has not been released. The alpha test was small, it drew on people we could reach directly, and it was designed to show whether the approach works at all. It cannot yet tell us how the tool performs at scale, over long studies or across languages.</div>
+      <nav class="toc toc-inline" aria-label="On this page">
+        <p class="mono" style="color:var(--ink-2)">On this page</p>
+        <ol><li><a href="#patbot" data-nav="patbot" data-jump="b-motivation">Motivation</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-design">Design</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-alpha">Alpha test</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-status">Current status</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-cite">Cite</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-refs">References</a></li></ol>
+      </nav>
+    </section>
+
+    <section class="section r-sec" id="b-motivation" aria-labelledby="b-motivation-h">
+      <p class="mono eyebrow">01</p>
+      <h2 class="h2" id="b-motivation-h">Motivation</h2>
+      <div class="prose">
+        <p><strong>Recall is a weak record of phone use.</strong> Most research on everyday technology use asks people to look back, at the end of a day or a week, and describe what they did. Studies that compare these estimates with logged use find only a moderate match between the two <span class="cite-ref">(Andrews et al., 2015; Parry et al., 2021)</span>. Our own study, <a href="#eiel" data-nav="eiel">Emotional Imbalances in Everyday Life</a>, pointed to a related difficulty, since the use participants regretted most was automatic and they could describe it only in retrospect, often without being able to recall the moment they picked up the phone.</p>
+        <p><strong>Asking in the moment.</strong> Experience sampling, also called ecological momentary assessment, addresses this by asking people brief questions at several points in the day, close to the experience being studied <span class="cite-ref">(Shiffman, Stone and Hufford, 2008)</span>. The method usually depends on a dedicated study app or device, and each additional installation, login and permission asks more of participants, particularly of people for whom data, storage or an unfamiliar interface carry a real cost.</p>
+        <p><strong>Who gets studied.</strong> Behavioural research continues to draw most of its participants from Western, educated, industrialised, rich and democratic societies <span class="cite-ref">(Henrich, Heine and Norenzayan, 2010)</span>, and human-computer interaction is no exception <span class="cite-ref">(Linxen et al., 2021)</span>. The online participant panels that much of this research relies on recruit largely in high-income countries and are priced for them, so that a study of young people in a tier 2 or tier 3 Indian city is difficult and expensive to run through them. We wanted a way to reach those participants that did not ask them to adopt a new platform and did not price researchers in the region out of the work.</p>
+        <p>PatBot follows from these three points. Messaging apps are already where many people in India spend a large part of their day, and a short question that arrives in a familiar chat asks very little of the person answering it.</p>
+      </div>
+    </section>
+
+    <section class="section r-sec" id="b-design" aria-labelledby="b-design-h">
+      <p class="mono eyebrow">02</p>
+      <h2 class="h2" id="b-design-h">Design</h2>
+      <div class="prose">
+        <p>We describe PatBot here as a participant experiences it. A person joins a study by starting a conversation in a messaging app they already use, such as WhatsApp or Discord, and agrees to take part in that conversation. Over the course of the study, short check-ins and surveys arrive in the same chat at points during the day, and each one can be answered in a few taps or a sentence or two. Participants can also reply in their own words or ask a question in the same chat.</p>
+      </div>
+      <ol class="cycle">
+        <li><h4>No new platform</h4><p>Taking part needs nothing beyond a chat app the participant already has, so there is nothing to install, no account to create and no new interface to learn.</p></li>
+        <li><h4>Short and close to the moment</h4><p>Questions are brief and arrive during the day, so that participants describe what they are doing or have just done, rather than reconstructing it later.</p></li>
+        <li><h4>Small, fair incentives</h4><p>Participants are meant to earn points for each completed survey and receive a small payment once they cross a threshold, through the payment apps they already use. <span class="todo">[confirm whether the alpha test paid participants, and the amounts]</span></p></li>
+      </ol>
+      <div class="prose">
+        <p><strong>Language.</strong> PatBot is designed to hold studies in the languages participants are most comfortable in, since a survey in a second language changes both who takes part and what they are able to say. <span class="todo">[state which languages the alpha test used, or that language support is planned]</span></p>
+        <p><strong>Consent and follow-up.</strong> Participants agree to a study before any questions are sent, and longer studies are designed to ask for their agreement again before each follow-up stage, so that taking part in one study does not commit a person to the next.</p>
+      </div>
+    </section>
+
+    <section class="section r-sec" id="b-alpha" aria-labelledby="b-alpha-h">
+      <p class="mono eyebrow">03</p>
+      <h2 class="h2" id="b-alpha-h">Alpha test</h2>
+      <div class="prose">
+        <p>We ran a first test of PatBot with <span class="todo">[number of participants]</span> people, recruited through <span class="todo">[how participants were recruited]</span>, between <span class="todo">[start and end dates]</span>. The study ran through WhatsApp <span class="todo">[confirm channel]</span> and sent participants <span class="todo">[what was asked, and how often]</span>. Its purpose was to find out whether people would respond to short check-ins in a chat at all, and how soon after receiving them.</p>
+        <p>Participants responded to between 70 and 80% of the check-ins they received, and the average time between a check-in arriving and a reply was between 15 and 20 minutes <span class="todo">[figures to confirm]</span>. A gap of that size means that most answers described something the participant had done recently, which is the condition in-the-moment research depends on.</p>
+      </div>
+      <p class="fig-title">What the alpha test supports</p>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th scope="col">Question</th><th scope="col">What the alpha test shows</th></tr></thead>
+        <tbody>
+          <tr class="held"><td>People respond to short check-ins in a chat</td><td>Supported. Participants answered 70 to 80% of check-ins <span class="todo">[to confirm]</span>.</td></tr>
+          <tr class="held"><td>Responses arrive close to the moment</td><td>Supported. The average response time was 15 to 20 minutes <span class="todo">[to confirm]</span>.</td></tr>
+          <tr><td>Participation holds over a long study</td><td>Not tested. The alpha test was short.</td></tr>
+          <tr><td>Incentives sustain participation</td><td>Not tested. <span class="todo">[adjust if participants were paid]</span></td></tr>
+          <tr><td>The approach works beyond our own networks</td><td>Not tested. Participants were people we could reach directly.</td></tr>
+          <tr><td>Studies work equally well across languages</td><td>Not tested.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="caveat"><strong>Reading these figures.</strong> The sample was small and drawn from people who knew of us, and people who agree to take part in an early test are likely to be more responsive than a general sample. The figures show that the approach can work, and they do not yet show how well it works.</div>
+    </section>
+
+    <section class="section r-sec" id="b-status" aria-labelledby="b-status-h">
+      <p class="mono eyebrow">04</p>
+      <h2 class="h2" id="b-status-h">Current status</h2>
+      <div class="prose">
+        <p>PatBot is paused for now, for two reasons. The first is that we do not currently have the funds to pay participants for their time, and we do not want to run studies that ask people for repeated responses during their day without compensating them. The second is that a tool for distributing studies is only as useful as the participant communities it can reach, and we do not yet have partnerships that would let us send studies beyond our own networks.</p>
+        <p>The alpha test has also changed our sense of what PatBot is for. It began as a way to collect data for our own studies, and we now see it more as a way to distribute studies for other researchers who want to reach participants in India and the Global South, with the incentives and consent described above built in.</p>
+        <p>We would like to hear from three kinds of people. Funders who could support participant payments would allow us to restart testing on a larger and more varied sample. Colleges, community groups and other organisations with participant communities in India could help us reach people outside our own networks. Researchers with studies that would suit short, in-the-moment check-ins could help us test PatBot on real research questions. If any of these describes you, please <a href="#collective" data-nav="collective" data-jump="reach-out">get in touch through the collective page</a>.</p>
+      </div>
+    </section>
+
+    <section class="section r-sec" id="b-cite" aria-labelledby="b-cite-h">
+      <h2 class="h2" id="b-cite-h">Cite</h2>
+      <p class="citebox">Chela, Y. (2026). PatBot: A Pilot of Chat-Based, In-the-Moment Research in India. Pilot report, Patronus Labs.</p>
+    </section>
+
+    <section class="section r-sec" id="b-refs" aria-labelledby="b-refs-h">
+      <h2 class="h2" id="b-refs-h">References</h2>
+      <ol class="refs"><li>Andrews, S., Ellis, D. A., Shaw, H., and Piwek, L. (2015). Beyond self-report: Tools to compare estimated and real-world smartphone use. PLoS ONE 10(10), e0139004.</li><li>Chela, Y. K., and Kane, R. (2026). Rethinking Digital Wellbeing Interventions: Awareness, Cognitive Dissonance, and Everyday Digital Self-Regulation in Indian College Students. IndiaHCI 2026.</li><li>Henrich, J., Heine, S. J., and Norenzayan, A. (2010). The weirdest people in the world? Behavioral and Brain Sciences 33(2–3), 61–83.</li><li>Linxen, S., Sturm, C., Brühlmann, F., Cassau, V., Opwis, K., and Reinecke, K. (2021). How WEIRD is CHI? Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems, 143.</li><li>Parry, D. A., Davidson, B. I., Sewall, C. J. R., Fisher, J. T., Mieczkowski, H., and Quintana, D. S. (2021). A systematic review and meta-analysis of discrepancies between logged and self-reported digital media use. Nature Human Behaviour 5(11), 1535–1547.</li><li>Shiffman, S., Stone, A. A., and Hufford, M. R. (2008). Ecological momentary assessment. Annual Review of Clinical Psychology 4, 1–32.</li></ol>
+    </section>
+   </div>
+   <aside class="r-side" aria-label="On this page">
+     <nav class="toc toc-side">
+       <p class="mono">On this page</p>
+       <ol><li><a href="#patbot" data-nav="patbot" data-jump="b-motivation">Motivation</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-design">Design</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-alpha">Alpha test</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-status">Current status</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-cite">Cite</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-refs">References</a></li></ol>
+     </nav>
+   </aside>
+  </div>
+</section>
+
 <!-- ======================= TOOLS ======================= -->
 <section class="view" id="view-tools" data-view="tools" aria-label="Tools and interventions" hidden>
   <div class="frame">
@@ -1484,7 +1604,7 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
 
         <!-- PatBot -->
         <article class="card">
-          <div class="art" aria-hidden="true">
+          <a class="art" href="#patbot" data-nav="patbot" aria-hidden="true" tabindex="-1">
             <svg viewBox="0 0 400 300">
               <text class="a-mono" x="24" y="34">Research distribution</text>
               <rect class="a-bubble" x="30" y="112" width="104" height="76" rx="8"/>
@@ -1502,10 +1622,13 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
               <rect class="a-bubble" x="300" y="186" width="80" height="36" rx="18"/>
               <text class="a-text" x="340" y="209" text-anchor="middle">Discord</text>
             </svg>
-          </div>
-          <p class="mono meta">Research infrastructure</p>
-          <h3>PatBot</h3>
+          </a>
+          <p class="mono meta">Research infrastructure · In testing · Report</p>
+          <h3><a href="#patbot" data-nav="patbot">PatBot</a></h3>
           <p>Takes surveys and research conversations to people where they already are, on WhatsApp and Discord, so taking part needs no new platform.</p>
+          <div class="cta-row">
+            <a class="readlink" href="#patbot" data-nav="patbot">Read the report →</a>
+          </div>
         </article>
 
         <!-- Alexis -->
@@ -1627,8 +1750,8 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
   }
 
   // ---------- routing ----------
-  var views=["home","research","tools","collective","eiel","phoneday"];
-  var parent={eiel:"research",phoneday:"tools"};
+  var views=["home","research","tools","collective","eiel","phoneday","patbot"];
+  var parent={eiel:"research",phoneday:"tools",patbot:"tools"};
   var navToggle=document.getElementById("menu-toggle"), nav=document.getElementById("site-nav");
   function show(name, jump){
     if(views.indexOf(name)<0) name="home";
@@ -1668,6 +1791,7 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
     if(p && p!=="/index.html"){
       if(/emotional-imbalances|\/eiel/.test(p)) v="eiel";
       else if(/phone-?day/.test(p)) v="phoneday";
+      else if(/pat-?bot/.test(p)) v="patbot";
       else if(/^\/research/.test(p)) v="research";
       else if(/^\/(tools|projects|dashboard)/.test(p)) v="tools";
       else if(/^\/(collective|join)/.test(p)) v="collective";
