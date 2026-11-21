@@ -384,6 +384,21 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .eq{margin:0;background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;font-family:var(--mono);font-size:13px;line-height:1.6;overflow-x:auto;white-space:pre;color:var(--ink);-webkit-overflow-scrolling:touch}
 .tbl-num td:not(:first-child){font-variant-numeric:tabular-nums}
 .card .readlink{margin-top:4px}
+/* report prominence */
+.announce{background:var(--ink);color:var(--paper)}
+.announce a{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 14px;max-width:1180px;margin-inline:auto;padding:10px 20px;color:var(--paper);text-decoration:none;font-size:15px;line-height:1.4;text-align:center}
+.announce .mono{font-size:11px;letter-spacing:.14em;color:#BDBDBD}
+.announce .go{text-decoration:underline;text-underline-offset:3px;font-weight:500;white-space:nowrap}
+.announce a:hover .go{text-decoration-thickness:2px}
+.readlink{justify-self:start;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--body);font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--paper);background:var(--ink);border:1px solid var(--ink);border-radius:8px;padding:12px 20px}
+.readlink:hover{background:#3A3A3A;border-color:#3A3A3A;color:var(--paper)}
+.readlink.sec{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+.readlink.sec:hover{background:var(--paper-2);color:var(--ink);border-color:var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.card a.art{text-decoration:none;transition:border-color .15s}
+.card a.art:hover{border-color:var(--ink)}
+.card h3 a{color:inherit;text-decoration:none}
+.card h3 a:hover{text-decoration:underline;text-underline-offset:4px}
 .mapd{border-top:1px solid var(--rule);padding:12px 0}
 .mapd:last-of-type{border-bottom:1px solid var(--rule)}
 .mapd summary{cursor:pointer;font-weight:600;color:var(--ink)}
@@ -413,6 +428,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </header>
 
 <main>
+<div class="announce" id="announce"><a href="#eiel" data-nav="eiel"><span class="mono">New report</span><span>Emotional Imbalances in Everyday Life</span><span class="go">Read the report →</span></a></div>
 <!-- ======================= HOME ======================= -->
 <section class="view" id="view-home" data-view="home" aria-label="Home">
 
@@ -423,6 +439,37 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <p class="tag">A frontier human lab, studying what technology is doing to the people who live with it.</p>
       <p class="q">Technology is changing our world. How is it changing us?</p>
     </div>
+
+    <section class="section" aria-labelledby="latest">
+      <p class="mono eyebrow" id="latest">Latest report</p>
+      <div class="cards">
+        <article class="card wide">
+          <a class="art" href="#eiel" data-nav="eiel" aria-hidden="true" tabindex="-1">
+            <svg viewBox="0 0 400 300">
+              <g transform="translate(200 160)">
+                <ellipse class="s-lake" rx="150" ry="46" stroke-width="1.2" opacity=".35"/>
+                <ellipse class="s-lake" rx="110" ry="34" stroke-width="1.2" opacity=".55"/>
+                <ellipse class="s-lake" rx="70" ry="22" stroke-width="1.4" opacity=".75"/>
+                <ellipse class="s-ember" rx="32" ry="10" stroke-width="1.6"/>
+                <rect class="a-ink" x="-14" y="-74" width="28" height="50" rx="5"/>
+                <rect class="a-paper" x="-10" y="-68" width="20" height="36" rx="2"/>
+                <circle class="a-ember" cx="0" cy="-28" r="2"/>
+              </g>
+              <text class="a-mono" x="24" y="34">Study report · Draft</text>
+            </svg>
+          </a>
+          <div class="txt">
+            <p class="mono meta">Study · Qualitative · IndiaHCI 2026</p>
+            <h3><a href="#eiel" data-nav="eiel">Emotional Imbalances in Everyday Life</a></h3>
+            <p>Why do people struggle to build better digital habits, even when they know the cost and keep trying? Our first study sat with that question.</p>
+            <div class="cta-row">
+              <a class="readlink" href="#eiel" data-nav="eiel">Read the report →</a>
+              <a class="readlink sec" href="#research" data-nav="research">See all research</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <article class="section manifesto" aria-labelledby="why">
       <p class="mono eyebrow">Our why</p>
@@ -530,7 +577,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <h2 class="h2" id="studies">Studies</h2>
       <div class="cards">
         <article class="card wide">
-          <div class="art" aria-hidden="true">
+          <a class="art" href="#eiel" data-nav="eiel" aria-hidden="true" tabindex="-1">
             <svg viewBox="0 0 400 300">
               <g transform="translate(200 160)">
                 <ellipse class="s-lake" rx="150" ry="46" stroke-width="1.2" opacity=".35"/>
@@ -543,12 +590,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
               </g>
               <text class="a-mono" x="24" y="34">Study report · Draft</text>
             </svg>
-          </div>
+          </a>
           <div class="txt">
             <p class="mono meta">Study · Qualitative · IndiaHCI 2026</p>
-            <h3>Emotional Imbalances in Everyday Life</h3>
+            <h3><a href="#eiel" data-nav="eiel">Emotional Imbalances in Everyday Life</a></h3>
             <p>Why do people struggle to build better digital habits, even when they know the cost and keep trying? Our first study sat with that question.</p>
-            <a class="readlink" href="#eiel" data-nav="eiel">Read the report</a>
+            <div class="cta-row">
+              <a class="readlink" href="#eiel" data-nav="eiel">Read the report →</a>
+              <a class="readlink sec" href="#eiel" data-nav="eiel" data-jump="r-dissonance">Go to the findings</a>
+            </div>
           </div>
         </article>
       </div>
@@ -1401,6 +1451,37 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
 
     <section class="section" aria-label="Tools">
       <div class="cards">
+        <!-- Build Your Phone Day -->
+        <article class="card wide">
+          <a class="art" href="#phoneday" data-nav="phoneday" aria-hidden="true" tabindex="-1">
+            <svg viewBox="0 0 400 300">
+              <text class="a-mono" x="24" y="34">Self-reflection game</text>
+              <rect x="70" y="64" width="150" height="34" rx="6" class="a-bubble" opacity=".45"/>
+              <rect x="70" y="104" width="150" height="34" rx="6" class="a-bubble"/>
+              <text class="a-text" x="84" y="126">Morning · news</text>
+              <rect x="70" y="144" width="150" height="34" rx="6" class="a-bubble"/>
+              <text class="a-text" x="84" y="166">Commute · music</text>
+              <rect x="70" y="184" width="150" height="34" rx="6" class="a-pine"/>
+              <text class="a-text" x="84" y="206" style="fill:var(--paper)">Night · reels</text>
+              <text class="a-mono" x="70" y="244">Only your last three show</text>
+              <g transform="translate(300 150)">
+                <circle r="52" class="s-rule" stroke-width="8"/>
+                <path class="s-ember" stroke-width="8" stroke-linecap="round" d="M0 -52 A52 52 0 0 1 49 18"/>
+                <text class="a-mono" y="4" text-anchor="middle">Your day</text>
+              </g>
+            </svg>
+          </a>
+          <div class="txt">
+            <p class="mono meta">Self-reflection game · Pilot · Report</p>
+            <h3><a href="#phoneday" data-nav="phoneday">Build Your Phone Day</a></h3>
+            <p>A short, game-like way to see how your phone fits across your day. You build the day one activity at a time and get a score shaped by our Emotional Imbalances in Everyday Life study.</p>
+            <div class="cta-row">
+              <a class="readlink" href="#phoneday" data-nav="phoneday">Read the report →</a>
+              <a class="readlink sec" href="https://phoneday.patronuslabs.org" target="_blank" rel="noopener">Try Build Your Phone Day</a>
+            </div>
+          </div>
+        </article>
+
         <!-- PatBot -->
         <article class="card">
           <div class="art" aria-hidden="true">
@@ -1444,31 +1525,6 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
           <p>A voice agent that holds qualitative interviews at scale, one question at a time, so people can talk about their phones and their days in their own words.</p>
         </article>
 
-        <!-- Build Your Phone Day -->
-        <article class="card">
-          <div class="art" aria-hidden="true">
-            <svg viewBox="0 0 400 300">
-              <text class="a-mono" x="24" y="34">Self-reflection game</text>
-              <rect x="70" y="64" width="150" height="34" rx="6" class="a-bubble" opacity=".45"/>
-              <rect x="70" y="104" width="150" height="34" rx="6" class="a-bubble"/>
-              <text class="a-text" x="84" y="126">Morning · news</text>
-              <rect x="70" y="144" width="150" height="34" rx="6" class="a-bubble"/>
-              <text class="a-text" x="84" y="166">Commute · music</text>
-              <rect x="70" y="184" width="150" height="34" rx="6" class="a-pine"/>
-              <text class="a-text" x="84" y="206" style="fill:var(--paper)">Night · reels</text>
-              <text class="a-mono" x="70" y="244">Only your last three show</text>
-              <g transform="translate(300 150)">
-                <circle r="52" class="s-rule" stroke-width="8"/>
-                <path class="s-ember" stroke-width="8" stroke-linecap="round" d="M0 -52 A52 52 0 0 1 49 18"/>
-                <text class="a-mono" y="4" text-anchor="middle">Your day</text>
-              </g>
-            </svg>
-          </div>
-          <p class="mono meta">Self-reflection game</p>
-          <h3>Build Your Phone Day</h3>
-          <p>A short, game-like way to see how your phone fits across your day. You build the day one activity at a time and get a score shaped by our Emotional Imbalances in Everyday Life study.</p>
-          <a class="readlink" href="#phoneday" data-nav="phoneday">Read the report</a>
-        </article>
       </div>
     </section>
   </div>
@@ -1577,6 +1633,7 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
   function show(name, jump){
     if(views.indexOf(name)<0) name="home";
     document.querySelectorAll(".view").forEach(function(v){ v.hidden = v.dataset.view!==name; });
+    var ann=document.getElementById("announce"); if(ann) ann.hidden = name==="eiel";
     document.querySelectorAll(".nav a[data-nav]").forEach(function(a){
       if(a.dataset.nav===(parent[name]||name) && !a.classList.contains("btn")) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
     });
