@@ -1440,6 +1440,119 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
   </div>
 </section>
 
+<!-- ======================= PATBOT PILOT REPORT ======================= -->
+<section class="view" id="view-patbot" data-view="patbot" aria-label="PatBot pilot report" hidden>
+  <div class="r-wrap">
+   <div class="r-main">
+    <header class="r-head">
+      <a class="back" href="#tools" data-nav="tools">← All tools</a>
+      <p class="r-meta mono"><span>Pilot report</span><span>Alpha test</span><span>In testing</span><span class="draft">Draft</span></p>
+      <h1>PatBot</h1>
+      <p class="r-sub">A general-purpose tool for running surveys and short studies through the messaging apps people already use, and an early test of it in India</p>
+      <p class="lede">PatBot delivers research studies inside the chat apps people open every day, so that taking part in a survey or a short study asks for nothing beyond a conversation they can answer in a few minutes. This report sets out why we built it, how it works from a participant’s side, what a small alpha test across three studies showed, and where the project stands now. PatBot has not been launched, and we describe it here as a tool that is still being tested.</p>
+      <div class="r-btns">
+        <a class="pri" href="#patbot" data-nav="patbot" data-jump="b-alpha">Alpha test</a>
+        <a href="#patbot" data-nav="patbot" data-jump="b-status">Current status</a>
+        <a href="#collective" data-nav="collective" data-jump="reach-out">Work with us</a>
+      </div>
+    </header>
+
+    <section class="section" aria-label="Summary">
+      <div class="tldr">
+        <p class="mono eyebrow">Summary</p>
+        <ul>
+          <li>Researchers working in India and the wider Global South have few affordable ways to reach participants, because the panels most studies rely on recruit mainly in high-income countries and are priced for them. PatBot is our attempt to reach people where they already spend their day, in <strong>everyday messaging apps</strong>, with no new platform to install or learn.</li>
+          <li>It is a general-purpose research tool. A study can be a one-off survey, a set of short questions spread across a day, or a brief exchange in a participant’s own words, and it can be about any topic a researcher is studying.</li>
+          <li>An alpha test ran <strong>three studies</strong> with about <strong>40 participants</strong> in total, using question sets of 5, 10 and 10 questions, and reached a success rate of <strong>around 80%</strong>, which suggests that people will take part in research through a chat they already use.</li>
+          <li>PatBot is <strong>paused</strong> for now. Restarting it depends on funding to pay participants for their time and on access to participant communities who can receive studies, and we would welcome funders and collaborators who can help with either.</li>
+        </ul>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="n">~40</span><span class="l">participants in the alpha test</span></div>
+        <div class="stat"><span class="n">3</span><span class="l">studies, with 5, 10 and 10 questions</span></div>
+        <div class="stat"><span class="n">~80%</span><span class="l">success rate across the three studies</span></div>
+        <div class="stat"><span class="n">Paused</span><span class="l">pending participant payments and access</span></div>
+      </div>
+      <div class="caveat"><strong>Status of this tool.</strong> PatBot is in testing and has not been released. The alpha test was small and was designed to show whether the approach works at all, so it cannot yet tell us how the tool performs at scale, over long studies or with a general sample of participants.</div>
+      <nav class="toc toc-inline" aria-label="On this page">
+        <p class="mono" style="color:var(--ink-2)">On this page</p>
+        <ol><li><a href="#patbot" data-nav="patbot" data-jump="b-motivation">Motivation</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-design">Design</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-alpha">Alpha test</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-status">Current status</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-refs">References</a></li></ol>
+      </nav>
+    </section>
+
+    <section class="section r-sec" id="b-motivation" aria-labelledby="b-motivation-h">
+      <p class="mono eyebrow">01</p>
+      <h2 class="h2" id="b-motivation-h">Motivation</h2>
+      <div class="prose">
+        <p><strong>Who gets studied.</strong> Behavioural research continues to draw most of its participants from Western, educated, industrialised, rich and democratic societies <span class="cite-ref">(Henrich, Heine and Norenzayan, 2010)</span>, and human-computer interaction is no exception <span class="cite-ref">(Linxen et al., 2021)</span>. The online participant panels that much of this research relies on recruit largely in high-income countries and are priced for them, so that a study of young people in a tier 2 or tier 3 Indian city is difficult and expensive to run through them. Researchers in the region, including us, are often left recruiting through personal networks, which limits both the size and the variety of what can be studied.</p>
+        <p><strong>The cost of a new platform.</strong> Most research tools ask participants to visit a website, install an app or create an account before they can answer a single question. Each of these steps asks more of participants, particularly of people for whom data, storage or an unfamiliar interface carry a real cost, and each is a point at which some of them decide not to continue.</p>
+        <p><strong>Reaching people in the course of their day.</strong> A question that arrives in a familiar chat can also be answered close to the moment it asks about. Many kinds of research benefit from this, since people recall everyday experiences less accurately as time passes, a limitation that experience sampling methods were developed to address <span class="cite-ref">(Shiffman, Stone and Hufford, 2008)</span>. Our own work on phone use is one example, since participants in <a href="#eiel" data-nav="eiel">Emotional Imbalances in Everyday Life</a> could often describe their most automatic use only in retrospect, although the same need arises in studies of mood, work, health behaviour and many other topics.</p>
+        <p>PatBot follows from these three points. Messaging apps are already where many people in India spend a large part of their day, and a study that arrives in a familiar chat asks very little of the person taking part while giving researchers a way to reach people they could not otherwise reach.</p>
+      </div>
+    </section>
+
+    <section class="section r-sec" id="b-design" aria-labelledby="b-design-h">
+      <p class="mono eyebrow">02</p>
+      <h2 class="h2" id="b-design-h">Design</h2>
+      <div class="prose">
+        <p>We describe PatBot here as a participant experiences it. A person joins a study by starting a conversation in a messaging app they already use, such as WhatsApp or Discord, and agrees to take part in that conversation. The study’s questions then arrive in the same chat, one at a time, and each can be answered with a tap or in a sentence or two. A study can be completed in one sitting, like a short survey, or spread across a day or several days, with questions arriving at different points.</p>
+      </div>
+      <ol class="cycle">
+        <li><h4>No new platform</h4><p>Taking part needs nothing beyond a chat app the participant already has, so there is nothing to install, no account to create and no new interface to learn.</p></li>
+        <li><h4>Any research question</h4><p>PatBot is not tied to a single topic or method. Researchers can use it for surveys, short check-ins and open-ended questions, on whatever subject their study addresses.</p></li>
+        <li><h4>Small, fair incentives</h4><p>Participants are meant to earn points for each completed study and receive a small payment once they cross a threshold, through the payment apps they already use.</p></li>
+      </ol>
+      <div class="prose">
+        <p><strong>Language.</strong> We intend PatBot to hold studies in the languages participants are most comfortable in, since a survey in a second language changes both who takes part and what they are able to say.</p>
+        <p><strong>Consent and follow-up.</strong> Participants agree to a study before any questions are sent, and longer studies are designed to ask for their agreement again before each follow-up stage, so that taking part in one study does not commit a person to the next.</p>
+      </div>
+    </section>
+
+    <section class="section r-sec" id="b-alpha" aria-labelledby="b-alpha-h">
+      <p class="mono eyebrow">03</p>
+      <h2 class="h2" id="b-alpha-h">Alpha test</h2>
+      <div class="prose">
+        <p>We ran a first test of PatBot across three separate studies with about 40 participants in total. The studies differed in length, with one asking 5 questions and the other two asking 10 each, which let us see whether people would stay with a study in a chat as it grew longer. Across the three studies the success rate was around 80%.</p>
+        <p>The purpose of the test was narrow. We wanted to know whether people would take part in research through a chat at all, and whether a study of ten questions was still workable in that format, and on both counts the results were encouraging.</p>
+      </div>
+      <p class="fig-title">What the alpha test supports</p>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th scope="col">Question</th><th scope="col">What the alpha test shows</th></tr></thead>
+        <tbody>
+          <tr class="held"><td>People take part in research through a chat</td><td>Supported. About 40 people took part across three studies, with a success rate of around 80%.</td></tr>
+          <tr class="held"><td>Studies of different lengths work in a chat</td><td>Supported for short studies. The studies asked 5, 10 and 10 questions.</td></tr>
+          <tr><td>Participation holds over a long or repeated study</td><td>Not tested. Each study was short.</td></tr>
+          <tr><td>Incentives sustain participation</td><td>Not tested.</td></tr>
+          <tr><td>The approach works at scale and with a general sample</td><td>Not tested. The test involved about 40 people.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="caveat"><strong>Reading these figures.</strong> The sample was small, and people who agree to take part in an early test are likely to be more willing than a general sample. The figures show that the approach can work, and they do not yet show how well it works or for whom.</div>
+    </section>
+
+    <section class="section r-sec" id="b-status" aria-labelledby="b-status-h">
+      <p class="mono eyebrow">04</p>
+      <h2 class="h2" id="b-status-h">Current status</h2>
+      <div class="prose">
+        <p>PatBot is paused for now, for two reasons. The first is that we do not currently have the funds to pay participants for their time, and we do not want to run studies that ask people for their time and attention without compensating them. The second is that a tool for distributing studies is only as useful as the participant communities it can reach, and we do not yet have partnerships that would let us send studies beyond our own networks.</p>
+        <p>The alpha test has also changed our sense of what PatBot is for. It began as a way to collect data for our own studies, and we now see it more as a way to distribute studies for other researchers who want to reach participants in India and the Global South, with the incentives and consent described above built in.</p>
+        <p>We would like to hear from three kinds of people. Funders who could support participant payments would allow us to restart testing on a larger and more varied sample. Colleges, community groups and other organisations with participant communities in India could help us reach people outside our own networks. Researchers with studies that would suit a chat format could help us test PatBot on real research questions. If any of these describes you, please <a href="#collective" data-nav="collective" data-jump="reach-out">get in touch through the collective page</a>.</p>
+      </div>
+    </section>
+
+    <section class="section r-sec" id="b-refs" aria-labelledby="b-refs-h">
+      <h2 class="h2" id="b-refs-h">References</h2>
+      <ol class="refs"><li>Chela, Y. K., and Kane, R. (2026). Rethinking Digital Wellbeing Interventions: Awareness, Cognitive Dissonance, and Everyday Digital Self-Regulation in Indian College Students. IndiaHCI 2026.</li><li>Henrich, J., Heine, S. J., and Norenzayan, A. (2010). The weirdest people in the world? Behavioral and Brain Sciences 33(2–3), 61–83.</li><li>Linxen, S., Sturm, C., Brühlmann, F., Cassau, V., Opwis, K., and Reinecke, K. (2021). How WEIRD is CHI? Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems, 143.</li><li>Shiffman, S., Stone, A. A., and Hufford, M. R. (2008). Ecological momentary assessment. Annual Review of Clinical Psychology 4, 1–32.</li></ol>
+    </section>
+   </div>
+   <aside class="r-side" aria-label="On this page">
+     <nav class="toc toc-side">
+       <p class="mono">On this page</p>
+       <ol><li><a href="#patbot" data-nav="patbot" data-jump="b-motivation">Motivation</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-design">Design</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-alpha">Alpha test</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-status">Current status</a></li><li><a href="#patbot" data-nav="patbot" data-jump="b-refs">References</a></li></ol>
+     </nav>
+   </aside>
+  </div>
+</section>
+
 <!-- ======================= TOOLS ======================= -->
 <section class="view" id="view-tools" data-view="tools" aria-label="Tools and interventions" hidden>
   <div class="frame">
@@ -1484,7 +1597,7 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
 
         <!-- PatBot -->
         <article class="card">
-          <div class="art" aria-hidden="true">
+          <a class="art" href="#patbot" data-nav="patbot" aria-hidden="true" tabindex="-1">
             <svg viewBox="0 0 400 300">
               <text class="a-mono" x="24" y="34">Research distribution</text>
               <rect class="a-bubble" x="30" y="112" width="104" height="76" rx="8"/>
@@ -1502,10 +1615,13 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
               <rect class="a-bubble" x="300" y="186" width="80" height="36" rx="18"/>
               <text class="a-text" x="340" y="209" text-anchor="middle">Discord</text>
             </svg>
-          </div>
-          <p class="mono meta">Research infrastructure</p>
-          <h3>PatBot</h3>
+          </a>
+          <p class="mono meta">Research infrastructure · In testing · Report</p>
+          <h3><a href="#patbot" data-nav="patbot">PatBot</a></h3>
           <p>Takes surveys and research conversations to people where they already are, on WhatsApp and Discord, so taking part needs no new platform.</p>
+          <div class="cta-row">
+            <a class="readlink" href="#patbot" data-nav="patbot">Read the report →</a>
+          </div>
         </article>
 
         <!-- Alexis -->
@@ -1627,8 +1743,8 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
   }
 
   // ---------- routing ----------
-  var views=["home","research","tools","collective","eiel","phoneday"];
-  var parent={eiel:"research",phoneday:"tools"};
+  var views=["home","research","tools","collective","eiel","phoneday","patbot"];
+  var parent={eiel:"research",phoneday:"tools",patbot:"tools"};
   var navToggle=document.getElementById("menu-toggle"), nav=document.getElementById("site-nav");
   function show(name, jump){
     if(views.indexOf(name)<0) name="home";
@@ -1668,6 +1784,7 @@ Overall          46.45 + 8.50 − 20 = 34.95</pre>
     if(p && p!=="/index.html"){
       if(/emotional-imbalances|\/eiel/.test(p)) v="eiel";
       else if(/phone-?day/.test(p)) v="phoneday";
+      else if(/pat-?bot/.test(p)) v="patbot";
       else if(/^\/research/.test(p)) v="research";
       else if(/^\/(tools|projects|dashboard)/.test(p)) v="tools";
       else if(/^\/(collective|join)/.test(p)) v="collective";
